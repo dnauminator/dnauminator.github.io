@@ -72,13 +72,13 @@ int main() {
         float inscribed_ellipsoid = (double)(4 * pi * ((x * y * z) / 8) / 3);//volume of resultant inscribed ellipsoid
         float X_Ellipse = EllipsoidSolverX(a, b, y);
         float Y_Ellipse = EllipsoidSolverY(a, b, x);
-        std::vector<Point2D> EllipsoidPoints = sampleEllipsoid(a, b, minx, maxx, 0.5);
+        std::vector<Point2D> EllipsoidPoints = sampleEllipsoid(a, b, minx, maxx, a/50);
         //print results
         printf("magnitude: %f\n", mag);
         printf("angles: %f, %f, %f\n", (double)anglex * mult1, (double)angley * mult1, (double)anglez * mult1);
         printf("your volume (rectangular prism): %f\n", rectangular_prism);
         printf("your volume (enclosed ellipsoid): %f\n", inscribed_ellipsoid);
-        PrintPoints(EllipsoidPoints);//displays the ellipse values from earlier func.
+        PrintPoints(EllipsoidPoints);//displays the ellipse values from earlier func, val 1 is step while 2 and 3 are respective x, y coords
         printf("your numbers: %f, %f, %f\n", x, y, z);//numbers that were input in prompt
 
       
