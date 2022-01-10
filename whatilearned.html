@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>What I Learned</title>
+<link rel="stylesheet" href="nonHTML/style.css"/> 
+
+</head>
+<body>
+    
+<pre><h3>                                                              
+    db   d8b   db db   db  .d8b.  d888888b      d888888b      db      d88888b  .d8b.  d8888b. d8b   db d88888b d8888b. 
+    88   I8I   88 88   88 d8' `8b `~~88~~'        `88'        88      88'     d8' `8b 88  `8D 888o  88 88'     88  `8D 
+    88   I8I   88 88ooo88 88ooo88    88            88         88      88ooooo 88ooo88 88oobY' 88V8o 88 88ooooo 88   88 
+    Y8   I8I   88 88~~~88 88~~~88    88            88         88      88~~~~~ 88~~~88 88`8b   88 V8o88 88~~~~~ 88   88 
+    `8b d8'8b d8' 88   88 88   88    88           .88.        88booo. 88.     88   88 88 `88. 88  V888 88.     88  .8D 
+     `8b8' `8d8'  YP   YP YP   YP    YP         Y888888P      Y88888P Y88888P YP   YP 88   YD VP   V8P Y88888P Y8888D' 
+                                                                                                                   
+
+    Daniel Naumov's Personal Site [<a href=index.html>Home</a>] [<a href="projects.html">Projects</a>] [<a href="musings.html">Musings</a>] [<a href="aboutme.html">About Me</a>] [<a href="contact.html">Contact Me</a>] 
+    
+    This'll be more properly organized later.
+
+    10 January 2022: Physical Chemistry
+    In Physical Chemistry, I've started solving problems from the book as a means to
+    better understand what exactly I'm learning. The first (and simplest) questions
+    are on probability. However, before I delve into it, some backstory is required.
+    Probability is crucial in the field of quantum mechanics, a large reason being
+    the Heisenberg Uncertainty Principle, which basically dictates that we can never
+    know both the exact position and velocity of a tiny particle (like an atom). So
+    as a way to somewhat get around this, probability is used to see how likely some
+    outcome is in a quantum mechanics problem (such as the odds that the particle
+    lies in some region of space from a to b).
+
+    So, some things about the actual calculations. They solve one-particle, one-
+    dimensional systems (so they're pretty basic). They utilize something called a
+    wavefunction, but it must be modified first. We're dealing with probabilities,
+    so the "Born Interpretaion," created by Max Born, is used. Born says that the 
+    product of conjugate wave function and the normal wavefunction results in the 
+    probability density, which is another function. This can be simplified down to
+    the absolute value of the wavefunction squared results in probability density.
+    The conjugate is just used to show that the math holds for complex numbers. 
+
+    Now what can we do with this probability density? We can take its derivative to
+    determine the probability that a particle is between x and x+dx, where dx is a
+    tiny value. We can also state that the integral from -infinity to +infinity of
+    the probability density function is 1. This is called normalization, and basically
+    tells us that the particle must be somewhere on the x axis (1 is 100%).
+
+    With this information, we can now solve numerical problems. The book goes through
+    one example that I will transcribe. The wavefunction (also known as psi) is equal
+    to a^(-1/2)*e^(-|x|/a) at t = 0. a = 1.0000 nm (DO NOT express this as 1*10^-9 m).
+    Objective 1 is to find the probability that the measured value (the particle) lies
+    between 1.5000 and 1.5001 nm. Objective 2 is to find the probability between 0 nm
+    and 2 nm. Objective 3 is to verify that the probability function will obey
+    normalization.
+    
+</h3>
+</pre>
+</body>
+</html>
