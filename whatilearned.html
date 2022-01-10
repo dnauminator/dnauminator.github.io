@@ -53,7 +53,23 @@
     between 1.5000 and 1.5001 nm. Objective 2 is to find the probability between 0 nm
     and 2 nm. Objective 3 is to verify that the probability function will obey
     normalization.
+
+    Objective 1 utilizes a unique solution. Since the interval is tiny (0.0001 nm) a
+    derivative is not needed. You can just use 0.0001 nm as the dx. The computation is
+    pretty straightforward - square the wavefunction (and use the absolute value), then 
+    plug in the numbers. "e" is Euler's number.
+
+    Objective 2 uses integration. Use the squared wavefunction from (1) and integrate
+    from 0 to 2. Remember that "a" is a constant, which means you can extract it. Then
+    evaluate.
+
+    Objective 3 is akin to Objective 2 regarding how you solve the problem, but there's
+    one catch. Since you're using absolute values, split the integral into two - one
+    from -infinity to 0, the other from 0 to +infinity. Then evaluate.
     
+    As a bonus exercise, attempt Objective 1 but with the following wavefunction:
+    (32a^3/pi)^(1/4)*xe^(-ax^2). For the purpose of proper units, a is 1.0000 nm^-2. Also
+    use x between 1.2000 and 1.2001 nm. Happy solving!
 </h3>
 </pre>
 </body>
