@@ -19,8 +19,8 @@
     Daniel Naumov's Personal Site [<a href=index.html>Home</a>] [<a href="projects.html">Projects</a>] [<a href="musings.html">Musings</a>] [<a href="aboutme.html">About Me</a>] [<a href="contact.html">Contact Me</a>] 
     
     This'll be more properly organized later.
-    <details><summary>11 January 2022 WIL</summary><span>
-    11 January 2022: Physical Chemistry Problem Solving
+    <details><summary>11-12 January 2022 WIL</summary><span>
+    11-12 January 2022: Physical Chemistry Problem Solving
     The next few WIL are going to just be going through a set of 33 textbook 
     problems step by step as a means of mastering content.
 
@@ -49,6 +49,24 @@
     happen when E = 4.406*10^-19J. Working backwards, 4.406*10^-19J = (6.626*10^-34
     * 2.998*10^8 m/s)/(x nm), x = (6.626*10^-34* 2.998*10^8 m/s)/(4.406*10^-19J) = 
     451 nm.
+
+    1.5: Wien's law - I = av^3/e^(bv/T), a and b are constants.
+    Plack's equation - I = av^3/(e^(bv/T)-1). At high frequencies, Wien's law is a good
+    approximation, since as v grows e^(bv/T)-1 can be approximated to e^(bv/T), because
+    e^(bv/T) >> 1. Rayleigh-Jeans law - I = 2(pi)v^2(kb)T/(c^2). Taylor expansion of e^x is
+    sum (from k=0 to infinity) of (x^k)/(k!). Taylor expansion of e^(bv/T) is basically
+    an expansion of e^(cx) (c=b/T, since both are just numbers). This results in sum 
+    (from k=0 to infinity) of (cx)^k/(k!), and since x is small, this can be approximated
+    to 1 + cx, or 1 + bv/T. So Planck's equation can be approximated to I = av^3/(bv/T),
+    and through algebraic manipulation, this can be expressed as I = a(v^2)T/b. While not
+    identical to the original law, it is important to remember that a and b are numerical
+    values just like 2pi, kb, and c^2, so by applying the proper constants, the formulas
+    match.
+
+    1.6: Calculate de Broglie wavelength of an electron moving at speed c/137: wavelength
+    = planck_constant/(mass_electron*velocity_electron). This leads to the expression
+    6.626*10^-34/(9.109*10^-34*2188321.168) = 3.324*10^-10, which is 3.324 angstrom or
+    0.3324 nm.
     </span></details>
     <details><summary>10 January 2022 WIL</summary><span>
     10 January 2022: Physical Chemistry
