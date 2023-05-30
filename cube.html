@@ -28,7 +28,7 @@
 <style>
 .container {
   width: 100vw;
-  height: 100vh;
+  height: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,7 +39,7 @@
   height: 200px;
   position: relative;
   transform-style: preserve-3d;
-  animation: rotate 5s infinite linear;
+  animation: rotate 2s infinite linear;
   transform-origin: center center;
 }
 
@@ -47,32 +47,32 @@
   position: absolute;
   width: 200px;
   height: 200px;
-  border: 1px solid black;
-  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid black;
+  background-color: rgba(202, 163, 36, 0.6);
 }
 
 .front {
-  transform: translateZ(100px);
+  transform: translateZ(100px) translateY(32px);
 }
 
 .back {
-  transform: translateZ(-100px) rotateY(180deg);
+  transform: translateZ(-100px) translateY(18px) rotateY(180deg);
 }
 
 .left {
-  transform: rotateY(-90deg) translateZ(100px);
+  transform: rotateY(-90deg) translateZ(100px) translateY(1.5px);
 }
 
 .right {
-  transform: rotateY(90deg) translateZ(100px);
+  transform: rotateY(90deg) translateZ(100px) translateY(-10px);
 }
 
 .top {
-  transform: rotateX(90deg) translateZ(100px);
+  transform: rotateX(90deg) translateZ(128px);
 }
 
 .bottom {
-  transform: rotateX(-90deg) translateZ(100px);
+  transform: rotateX(-90deg) translateZ(58px);
 }
 
 @keyframes rotate {
