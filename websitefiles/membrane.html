@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spherical Membrane Generator</title>
+<link rel="icon" type="image/x-icon" href="monocle.png">
+<link rel="stylesheet" href="nonHTML/style.css"/>
+
+</head>
+<body>
+
+<pre>
+<h3 class="head"><a href=index.html class="homeLink">Daniel Naumov's Personal Site</a> [<a href="projects.html">Projects</a>] [<div class="dropdown"><button class="dropbutton"><u>Musings</u></button><div class="dropdown-content"><a href="musings.html">Musings</a><a href="whatilearned.html">What I Learned</a><a href="resources.html">Resources</a><a href="laymanslist.html">Layman's List</a></div></div>] [<a href="aboutme.html">About Me</a>] [<a href="contact.html">Contact Me</a>] [<button class="toggle" onclick="toggle()">Click for Light Mode</button>]
+</h3>  
+<h3>
+<html>
+  <body>
+    <div class="container">
+      <h1>Spherical Membrane Animation</h1>
+      <form>
+        <div class="form-group">
+          <label for="variable1">Variable 1:</label>
+          <input type="range" class="form-control-range" id="variable1" name="variable1" min="0" max="10" step="1">
+        </div>
+        <div class="form-group">
+          <label for="variable2">Variable 2:</label>
+          <input type="range" class="form-control-range" id="variable2" name="variable2" min="0" max="10" step="1">
+        </div>
+        <div class="form-group">
+          <label for="variable3">Variable 3:</label>
+          <input type="range" class="form-control-range" id="variable3" name="variable3" min="0" max="10" step="1">
+        </div>
+        <div class="form-group">
+            <label for="variable3">Variable 4:</label>
+            <input type="range" class="form-control-range" id="variable3" name="variable3" min="0" max="10" step="1">
+          </div>
+      </form>
+      <img src="{{ url_for('static', filename='animation.gif') }}" alt="Spherical Membrane Animation">
+    </div>
+  </body>
+</html>

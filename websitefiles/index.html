@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Home Page!</title>
+<link rel="icon" type="image/x-icon" href="smile.png">
+<link rel="stylesheet" href="nonHTML/style.css"/> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+<pre>
+<h3 class="head"><a href=index.html class="homeLink">Daniel Naumov's Personal Site</a> [<a href="projects.html">Projects</a>] [<div class="dropdown"><button class="dropbutton"><u>Musings</u></button><div class="dropdown-content"><a href="musings.html">Musings</a><a href="whatilearned.html">What I Learned</a><a href="resources.html">Resources</a><a href="laymanslist.html">Layman's List</a></div></div>] [<a href="aboutme.html">About Me</a>] [<a href="contact.html">Contact Me</a>] [<button class="toggle" onclick="toggle()">Click for Light Mode</button>]
+</h3>
+<pre>
+  <h1 class="double"> 
+  
+   ██╗
+ ████║
+ ╚═██║
+   ██║
+   ██║
+   ███████╗
+   ╚══════╝
+<b>    ============================================================================================= </b>
+    ██████╗ ███╗   ██╗ █████╗ ██╗   ██╗███╗   ███╗██╗███╗   ██╗ █████╗ ████████╗ ██████╗ ██████╗ 
+    ██╔══██╗████╗  ██║██╔══██╗██║   ██║████╗ ████║██║████╗  ██║██╔══██╗╚══██╔══╝██╔═══██╗██╔══██╗
+    ██║  ██║██╔██╗ ██║███████║██║   ██║██╔████╔██║██║██╔██╗ ██║███████║   ██║   ██║   ██║██████╔╝
+    ██║  ██║██║╚██╗██║██╔══██║██║   ██║██║╚██╔╝██║██║██║╚██╗██║██╔══██║   ██║   ██║   ██║██╔══██╗
+    ██████╔╝██║ ╚████║██║  ██║╚██████╔╝██║ ╚═╝ ██║██║██║ ╚████║██║  ██║   ██║   ╚██████╔╝██║  ██║
+    ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝
+                                                                                                
+<child_heading><h1 class="small">
+
+    ██╗  ██╗██╗   ██╗███████╗
+    ╚██╗██╔╝╚██╗ ██╔╝╚══███╔╝
+     ╚███╔╝  ╚████╔╝   ███╔╝ 
+     ██╔██╗   ╚██╔╝   ███╔╝  
+ ██╗██╔╝ ██╗   ██║   ███████╗
+ ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝
+ 
+</child_heading></h1></pre>
+</h1>
+<h3>
+    ooooo   ooooo                                       
+    `888'   `888'                                       
+     888     888   .ooooo.  ooo. .oo.  .oo.    .ooooo.  
+     888ooooo888  d88' `88b `888P"Y88bP"Y88b  d88' `88b 
+     888     888  888   888  888   888   888  888ooo888 
+     888     888  888   888  888   888   888  888    .o 
+    o888o   o888o `Y8bod8P' o888o o888o o888o `Y8bod8P' 
+                                                            
+    <script>
+        const btn = document.querySelector(".toggle");
+        function toggle(){
+          if (document.documentElement.getAttribute('color-mode') == 'light'){
+            document.documentElement.setAttribute('color-mode', 'dark');
+            btn.innerHTML = "Click for Light Mode"
+          } else {
+            document.documentElement.setAttribute('color-mode', 'light');
+            btn.innerHTML = "Click for Dark Mode"
+          }
+        }
+    </script></h3><h3>
+    Hello all, my name is Daniel and I warmly welcome you to my site. As you can see by the ASCII
+    art and generally minimal nature of this page, this is both a window into the "old net" and
+    a place for me to post various cool projects.
+
+    Above you should see several bracketed hyperlinks - this is the homepage, and from here you can
+    venture forth into my projects, musings, or find out more about me. 
+
+    I sincerely hope you enjoy!
+    -----------------------------------------------------------------------------------------------
+    Navigating the Musings Tab:
+    -Musings: Just my general thoughts about life and non-academic topics that interest me.
+    -What I Learned: Academic topics that I've learned outside the classroom and wanted to share.
+    -Resources: A travel hub of sorts that has the webpages of people who have interesting things to
+    say.
+    -Layman's List: Initially intended to be a very barebones explanation of various STEM topics.
+    However, I've decided to post ALL my academic notes there, so that they're all in one place and
+    easily accessible to anyone who visits. If you're a science, engineering, or math major and have
+    detailed notes on interesting classes, and you're interested in publishing these notes, reach out
+    to me. I will try and transcribe them to here when I have the time. If you have notes on physics 
+    mechanics and electricity + magnetism, those would be especially appreciated.
+
+    This page has a bunch of hits, I'd tell you how many but PHP/mySQL is hard. Date of last update
+    below.
+    
+</h3>
+</pre>
+</body>
+<footer><h3 class="medium" id = "date"></h3><script>const date = new Date(document.lastModified); document.getElementById("date").innerHTML = date;</script>
+</footer>
+</html>

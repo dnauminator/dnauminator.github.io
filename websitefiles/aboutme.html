@@ -7,7 +7,10 @@
 </head>
 <body>
 
-<pre><h3>
+<pre>
+<h3 class="head"><a href=index.html class="homeLink">Daniel Naumov's Personal Site</a> [<a href="projects.html">Projects</a>] [<div class="dropdown"><button class="dropbutton"><u>Musings</u></button><div class="dropdown-content"><a href="musings.html">Musings</a><a href="whatilearned.html">What I Learned</a><a href="resources.html">Resources</a><a href="laymanslist.html">Layman's List</a></div></div>] [<a href="aboutme.html">About Me</a>] [<a href="contact.html">Contact Me</a>] [<button class="toggle" onclick="toggle()">Click for Light Mode</button>]
+</h3>  
+<h3>
           d8888 888                        888         888b     d888          
          d88888 888                        888         8888b   d8888          
         d88P888 888                        888         88888b.d88888          
@@ -17,7 +20,19 @@
     d8888888888 888 d88P Y88..88P Y88b 888 Y88b.       888   "   888 Y8b.     
    d88P     888 88888P"   "Y88P"   "Y88888  "Y888      888       888  "Y8888  
                                                                          
-    Daniel Naumov's Personal Site [<a href=index.html>Home</a>] [<a href="projects.html">Projects</a>] [<a href="musings.html">Musings</a>] [<a href="aboutme.html">About Me</a>] [<a href="contact.html">Contact Me</a>] 
+    
+    <script>
+        const btn = document.querySelector(".toggle");
+        function toggle(){
+          if (document.documentElement.getAttribute('color-mode') == 'light'){
+            document.documentElement.setAttribute('color-mode', 'dark');
+            btn.innerHTML = "Click for Light Mode"
+          } else {
+            document.documentElement.setAttribute('color-mode', 'light');
+            btn.innerHTML = "Click for Dark Mode"
+          }
+        }
+    </script>
 
     My name is Daniel and I am currently studying Chemical and Biomolecular Engineering at NYU.
     I'm primarily interested in scale-up and catalysis processes - essentially various means to

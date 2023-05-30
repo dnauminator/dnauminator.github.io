@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
 <title>What I Learned</title>
 <link rel="stylesheet" href="nonHTML/style.css"/> 
 
 </head>
 <body>
     
-<pre><h3>                                                              
+<pre>
+<h3 class="head"><a href=index.html class="homeLink">Daniel Naumov's Personal Site</a> [<a href="projects.html">Projects</a>] [<div class="dropdown"><button class="dropbutton"><u>Musings</u></button><div class="dropdown-content"><a href="musings.html">Musings</a><a href="whatilearned.html">What I Learned</a><a href="resources.html">Resources</a><a href="laymanslist.html">Layman's List</a></div></div>] [<a href="aboutme.html">About Me</a>] [<a href="contact.html">Contact Me</a>] [<button class="toggle" onclick="toggle()">Click for Light Mode</button>]
+</h3>  
+<h3>                                                              
     db   d8b   db db   db  .d8b.  d888888b      d888888b      db      d88888b  .d8b.  d8888b. d8b   db d88888b d8888b. 
     88   I8I   88 88   88 d8' `8b `~~88~~'        `88'        88      88'     d8' `8b 88  `8D 888o  88 88'     88  `8D 
     88   I8I   88 88ooo88 88ooo88    88            88         88      88ooooo 88ooo88 88oobY' 88V8o 88 88ooooo 88   88 
@@ -16,9 +20,37 @@
      `8b8' `8d8'  YP   YP YP   YP    YP         Y888888P      Y88888P Y88888P YP   YP 88   YD VP   V8P Y88888P Y8888D' 
                                                                                                                    
 
-    Daniel Naumov's Personal Site [<a href=index.html>Home</a>] [<a href="projects.html">Projects</a>] [<a href="musings.html">Musings</a>] [<a href="aboutme.html">About Me</a>] [<a href="contact.html">Contact Me</a>] 
-    
-    This'll be more properly organized later.
+        
+    <script>
+        const btn = document.querySelector(".toggle");
+        function toggle(){
+          if (document.documentElement.getAttribute('color-mode') == 'light'){
+            document.documentElement.setAttribute('color-mode', 'dark');
+            btn.innerHTML = "Click for Light Mode"
+          } else {
+            document.documentElement.setAttribute('color-mode', 'light');
+            btn.innerHTML = "Click for Dark Mode"
+          }
+        }
+    </script>
+
+    This'll be more properly organized later. Temporarily inactive as school notes are
+    primarily uploaded to <a href="laymanslist.html">Layman's List</a> to be easily referenced by university friends
+    and people in the future. :-)
+    <details><summary>19 January 2022 WIL</summary><span>
+    Did a small break just to relax and clear my mind before school starts. Back at
+    it because Quantum Chemistry is hard. So, particle in a box. This is basically 
+    a microscopic box in one dimension. The particle is "contained" by means of potential
+    energy - 0 inside the box, infinite outside. What makes the box useful? Well, we
+    can use it to determine the energy of a particle via the formula E = ((n*h_bar)^2/
+    8m(l)^2). m is mass and l is the length of the box - this is why large boxes that
+    we can actually see result in such a low energy that it is negligible, and therefore
+    not a part of the scope of quantum mechanics. The box also allows us to calculate
+    frequency and wavelength by relating the upper and lower quantized energies in the
+    box to the standard definition of energy E = (planck_constant*frequency) and
+    (frequency*wavelength) = c. Basically, the box helps us compute the properties of a
+    tiny particle in a tiny space.
+    </span></details>
     <details><summary>11-12 January 2022 WIL</summary><span>
     11-12 January 2022: Physical Chemistry Problem Solving
     The next few WIL are going to just be going through a set of 33 textbook 
@@ -66,7 +98,22 @@
     1.6: Calculate de Broglie wavelength of an electron moving at speed c/137: wavelength
     = planck_constant/(mass_electron*velocity_electron). This leads to the expression
     6.626*10^-34/(9.109*10^-34*2188321.168) = 3.324*10^-10, which is 3.324 angstrom or
-    0.3324 nm.
+    0.3324 nm. 
+
+    1.7: Integrate the function dx/dt = -gt + gt_0 + v_0 to find x as a function of time:
+    Multiply both sides by dt then integrate both sides. Integral(dx) = Integral((-gt+gt_0
+    +v_0)dt), integrals are definite (from x_0 to x), (from t_0 to t). This results in
+    x - x_0 = (-1/2)g(t-t_0)^2 + v_0(t-t_0).
+
+    1.8: psi = ae^(-ibt)e^(-bmx^2/h_bar). Find potential energy function V - this can be
+    done via time-dependent Schrodinger eq (t is present in equation). The relevant eq is
+    (-h_bar/i)(partial_psi(x,t)/partial_t) = (-(h_bar^2/2m))(2partial_psi(x,t)/2partial_x)
+    +V(x,t)psi(x,t). Goal is to find V(x,t). partial_psi/partial_t = -ibae^(-ibt)e^(-bmx^2/
+    h_bar). 2partial_psi/2partial_x = ae^(-ibt)(2bm/h_bar^2)(2bmx^2-h_bar)e^(-bmx^2/h_bar).
+    Simplifying, we end up with (h_bar)bae^(-ibt)e^(-bmx^2/h_bar) = 
+    ae^(-ibt)(-b)(2bmx^2-h_bar)e^(-bmx^2/h_bar) + V(x,t)ae^(-ibt)e^(-bmx^2/h_bar). So V(x,t)
+    = ((h_bar)bae^(-ibt)e^(-bmx^2/h_bar) - ae^(-ibt)(-b)(2bmx^2-h_bar)e^(-bmx^2/h_bar) / 
+    ae^(-ibt)e^(-bmx^2/h_bar)). V(x,t) = 2mb^2x^2
     </span></details>
     <details><summary>10 January 2022 WIL</summary><span>
     10 January 2022: Physical Chemistry

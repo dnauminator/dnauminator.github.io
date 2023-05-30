@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Layman's List</title>
+<link rel="stylesheet" href="nonHTML/style.css"/> 
+
+</head>
+<body>
+    
+<pre>
+<h3 class="head"><a href=index.html class="homeLink">Daniel Naumov's Personal Site</a> [<a href="projects.html">Projects</a>] [<div class="dropdown"><button class="dropbutton"><u>Musings</u></button><div class="dropdown-content"><a href="musings.html">Musings</a><a href="whatilearned.html">What I Learned</a><a href="resources.html">Resources</a><a href="laymanslist.html">Layman's List</a></div></div>] [<a href="aboutme.html">About Me</a>] [<a href="contact.html">Contact Me</a>] [<button class="toggle" onclick="toggle()">Click for Light Mode</button>]
+</h3>  
+<h3 class="small">
+                                                                
+     _/                                                  
+    _/                                                                _/              _/        _/              _/      _/   
+   _/          _/_/_/  _/    _/  _/_/_/  _/_/      _/_/_/  _/_/_/        _/_/_/      _/              _/_/_/  _/_/_/_/  _/    
+  _/        _/    _/  _/    _/  _/    _/    _/  _/    _/  _/    _/    _/_/          _/        _/  _/_/        _/      _/     
+ _/        _/    _/  _/    _/  _/    _/    _/  _/    _/  _/    _/        _/_/      _/        _/      _/_/    _/              
+_/_/_/_/    _/_/_/    _/_/_/  _/    _/    _/    _/_/_/  _/    _/    _/_/_/        _/_/_/_/  _/  _/_/_/        _/_/  _/       
+                         _/                                                                                                  
+                    _/_/                                                                                                     
+
+    </h3><h3>                                                                                                                                                       
+    
+    <script>
+        const btn = document.querySelector(".toggle");
+        function toggle(){
+          if (document.documentElement.getAttribute('color-mode') == 'light'){
+            document.documentElement.setAttribute('color-mode', 'dark');
+            btn.innerHTML = "Click for Light Mode"
+          } else {
+            document.documentElement.setAttribute('color-mode', 'light');
+            btn.innerHTML = "Click for Dark Mode"
+          }
+        }
+    </script>
+<b>The symbol ζ (lowercase zeta) denotes courses currently being taken.</b>
+    <details><summary>  Single Variable Calculus</summary><span>
+A swift introduction to calculus - cursory glances so you understand a lot of the things in WIL.
+There are so many great videos on calculus online that this seems a little useless, but here 
+I'll keep things as cut and dry as possible.
+
+The derivative (of a function): Another function that tells you the slope of the original function
+at every point. You can take derivatives of derivatives. Notable simple rules: derivative of x^n
+is n*x^(n-1). Derivative of nx is n. Derivative of n is 0. (n for all of these is just a number).
+More complicated rules: product rules (a function multiplied by another function), chain rules
+(a function of a function, such as sin(x^2)), and quotient rules (a function divided by another
+function).
+Product rule: derivative of f(x)*g(x) is f'(x)*g(x) + f(x)*g'(x). You can see this holds for even
+the simple expressions. x^2, which can be expressed as x*x, becomes 2x. This is consistent with
+n*x^(n-1) from earlier. Something like 5x, expressed as 5*x, becomes 5 for the same reason. This
+works with more complicated expressions too, as long as the variable they're dealing with is the
+same.
+Chain rule: derivative of f(g(x)) is g'(x)*f'(g(x)). The internal function's derivative is taken
+and is then multiplied by the derivative of the external function. So something like sin(x^2) has
+a derivative of 2x*cos(x^2).
+Quotient rule: derivative of f(x)/g(x) is a bit more complex, but I remember it with a mnemonic.
+"Low d high - high d low over low squared." This is expressing (g(x)*f'(x) - f(x)*g'(x))/(g(x)^2).
+It's a useful mnemonic and is worth memorizing.
+More basic derivative things: the trigonometric functions. They go (in order of derivatives) sin(x),
+cos(x), -sin(x), -cos(x), sin(x). There are more complicated ones but sin(x) and cos(x) come up a lot.
+
+The integral (of a function): This is another function that is basically the opposite of derivative,
+but with it comes some set of challenges. You can't integrate everything - there are some
+expressions that are just unintegrable. Basic rule is integral of x^n becomes (x^n+1)/(n+1), nx 
+becomes nx^2/2, n becomes nx. There's also two types of integrals: definite (has defined bounds) and
+indefinite (the entire function is integrated). So what is the integral visually, with its definite
+bounds, and considering that the derivative is the slope of a function. Well, the integral is the 
+area under the curve of a function, where above the axis is positive and below is negative.
+There are a lot of integration techniques, but the most basic one is "u-substitution," where you
+can simplify an integral by setting some part of it equal to u, making it easier to integrate. 
+
+That sounded confusing so let me clarify. Let's say you have an integral of xsin(x^2) dx. You can plug
+in x^2 for u, so du/dx = 2x, and dx = 1/(2x). This lets you transform the expression to the intermediary
+integral of (1/2x)(xsin(u))du. The multiple variables would be a problem, but they cancel out and you
+end up with integral of (1/2)sin(u)du, which becomes (1/2)(-cos(u)). Plug the x equivalent of u back
+in to end up with the answer: (1/2)(-cos(x^2)) + C. C is any numerical constant, because if you think
+of the integral as the opposite of a derivative, you could take the derivative of any function + C and
+C would disappear. You may be wondering why cos is negative - this is because the trigonometric
+derivative path is reversed for integrals, and goes sin to -cos to -sin to cos to sin.
+
+Definite integrals are now convenient to explain - once you evaluate an integral, you then just plug in 
+the definite integral bounds, and subtract lower from upper. There's no +C in the final expression since
+you have a numerical value.
+</span></details>
+
+<details><summary>  A Dive into Discrete Math [More TBA 2023 Spring]</summary><span>
+A quick preface before I start - I am unofficially sitting in on this lecture and only taking the most
+rudimentary notes. There will be no heavy problem solving of this topic on WIL (for now) because of my
+lack of textbook access as well as course prioritization (since this is just a class I sit in on, the
+notes won't be as good as those for Physical Chemistry or Linear Algebra + Differential Equations).
+
+Truth Tables, Negations, Disjunctions, Conjungtions, Conditionals, and Biconditionals:
+Starting with the very basics, a truth table is the simplest Interpretaion of a true/false statement.
+Put succinctly, the statement 3 > 2 is true while 2 > 3 is false. Trutb Tables minimize this further by
+replacing the statement with a variable "p," which can either be true or false. More complex statements
+can have more variables, but for now we'll deal with two: "p" and "q," where the latter has the same true
+- false properties as the former. However, p and q ARE distinct statements. They can be put together into
+a truth table to show what all the other terms mentioned are.
+
+Negations are basically an inversion of the variable's values. If p is true, false, then ~p is false, true.
+Negations are typically the first operation applied in discrete math statements.
+
+Disjunctions, represented by v, as in p v q, are a way of mathematically making an "OR" statement. Consider
+this truth table: p is true, true, false, false; q is true, false, true, false. Ergo p v q would be true,
+true, true, false, where the only false disjunction result is when both p and q are false.
+
+Conjunctions, represented by ^, as in p ^ q, are a way of mathematically making an "AND" statement. Taking
+the same table as with the disjunction but with p ^ q, the results would be true, false, false, false, where
+the only true statement is when both p and q are true. 
+
+Conditionals are pretty abstract (more in depth explanation later on). They are represented by -->, as in
+p --> q. Using our truth table from above, the results of the conditional would be true, false, true, true.
+The reason for the "false" result is because a true statement cannot "cause" a false statement. It's less
+muddled if you look at p as a hypothesis and q as a conclusion. If your hypothesis is right and your conclusion
+is too, that makes sense. If both are wrong, it also makes sense. If your hypothesis is false but your
+conclusion is true, you're lucky and as long as the conclusion is right, it's ok. But if your hypothesis is
+right but your conclusion isn't, that conditional makes no sense - there must've been some sort of error.
+One way of expressing the conditional is by ~p v q, this will yield the same truth table results.
+
+Biconditionals are conditionals where p implies q and q implies p. They are represented by <-->, as in p <-
+-> q. Their truth table results are true, false, false, true, meaning that it is true when the values of p
+and q are the same. [END OF LEC1 NOTES]
+</span>
+</details>
+
+<details><summary>  Linear Algebra and Differential Equations ζ</summary><span>
+<ul class="layman"><li><details><summary>  Lecture 1/2: Basics of Differential Equations</summary><span>
+Differential equations should be a somewhat familiar topic from Calculus 2, as they frequently come up as
+separable variable problems. Separable variables are fairly straightforward - they simply require algebraic
+manipulation and some integration skills. Have some f(y)dy = g(x)dx, integrate both sides, and finish.
+
+These differential equations have something called 'orders.' They are pretty straightforward: the highest
+derivative defines the order of the differential equation. For example, y''' (or the 3rd derivative of y)
+- 7y' + 22 = x^2 is a 3rd order linear differential equation. The distinction of linear differential equation
+is important, because nonlinear DEs are completely different in terms of solutions (and our class hasn't
+covered them yet). You can identify nonlinear differential equations pretty simply - if the derivative is
+multiplied, divided, exponentiated (basically everything except added to or subtracted from), it's not linear.
+
+One of the most fundamental differential equations is the first order linear differential equation (FOLDE).
+It's very commonly encountered and you usually see it in computation problems like initial value, which allow
+you to solve for the constant left after integration. One of the most useful tools for the evaluation of
+differential equations is the slope field - at every point in a cartesian plane, values are plugged in and
+result in a detailed field that lets you see how a particle placed in the system would move about, more or
+less. One subfield of differential equastions are autonomous DEs, which only have one variable within them.
+Something like y' = y+5 is an example, and they're incredibly easy to make a slope field for.
+
+Some important side notes: some initial value DE problems are unsolvable, and others don't necessarily have
+unique solutions. An example of the former would be y' = -y/x, y(0)=0. After separation of variables, you end
+up with integral of 1/y dy = -integral 1/x dx. So, ln|y|=-ln|x|+ln|c| (this ln|c| is still a constant and is
+useful in simplifying the problem). So, ln|y|=ln|c/x|, y = c/x, and y(0) = 0. But this is impossible, because
+y(0) is c/0, which cannot ever be 0 - the DE is unsolvable. For a nonunique solution example y' = 3y^(2/3), y(0)
+= 0 is a good example. This will be left as an exercise for the reader, but there are two solutions for this
+initial value problem, not one.
+
+Some differential equations aren't seperable. The techniques for solving them will be discussed in a later
+lesson posting. However, one notable exception to inseperable DEs in the form y' + p(x)y = q(x) is q(x) = 0.
+This results in something called homogeneity, and the DE can now be solved by separation of variables.
+
+Finally, going back to slope fields, differential equations have stable, semistable, and unstable solutions.
+This is easily visualized in a slope field. Stable solutions are those where a particle placed above or below
+the solution (as long as it is within the domain - that is, not high/low enough to be affected by another
+solution) will go towards the solution. An unstable solution is the opposite - any deviation from the solution
+will cause the particle to never return to that solution. A semistable solution is one that is stable from one
+side but not the other (so the slope field points into it at one side and out at the other).
+
+Lecture 25. x"-4x'+3x = 0. x = u_1, x' = u_2, x' = u_1' = u_2, x'' = u_1'' = u_2'. x" = 4x'-3x --> x" = 4u_2 - 3u_1.
+u_1' = u_2. u_2' = 4u_2 - 3u_1. This is a system of two eqns and 2 unknowns. [u_1'; u_2'] = [0 1; -3 4][u_1; u_2].
+x' = Ax + F. Transforming 2nd order LDE into linear algebra. 2y""-3y"+4y = sin(t). 2y""=0y"'+3y"+0y'-4y+sin(t). 4th
+order differential equation. y=u1, y'=u2, y"=u3, y"'=u4, y""=u4'. u4' = 0u4 + (3/2)u3 + 0u2 - 2u1 + (sin(t))/4. 
+[u1'; u2'; u3';, u4'] = (0 1 0 0; 0 0 1 0; 0 0 0 1; -2 0 3/2 0)(u1; u2; u3; u4)+ (0; 0; 0; sin(t)/2). u' = Au + F.
+Homogeneous system X' = AX. y" + ay' + by = f(x) -> yH = c1y1+c2y2, yH + yP.S = yG.S. X = Xc + Xp. Xp = particular
+solution. x1 = e^(at)(pcos(bt)-qsin(bt)); x2 = e^(at)(qcos(bt)+psin(bt)). X' = AX, A = (-1 2; -2 -1), lambda =
+-1 +- 2i. a = -1, b = 2 --> x1 = e^(-t)(pcos(2t)-qsin(2t)); x2 = e^(-t)(qcos(2t)-psin(2t)).(i, -1; 1 i) -->
+(1 i; 1 i) --> (1 i; 0 0). a + ib = 0, b is free. a = -ib. So eigenvector is (a;b) = (-ib;b) = (-i;1)b so v =
+(0;1) + i(-1;0). General solution c1e^(-t)((0;1)cos(2t)-(-1;0)sin(2t)) + c2e^(-t)((-1;0)sin(2t)+(0;1)cos(2t)). 
+So c1e^(-t)(sin2t;cos2t)+c2e^(-t)(-sin2t;cos2t) = x(t). Defective matrix generalized eigenvector. If lambda is an
+eigenvalue for A with am = 2 and gm = 1, then the two linearly independent solution for x' = AX are x1(t) = 
+e^(lambda*t)v, x2(t) = e^(lambda*t)(tv1 + v2). For 3x3, x3(t) = e^(labmda*t)(t^2*v3/2 + tv2 + v1). Defective example:
+(1 -4, 4 -7). x1' = x1-4x2, x2' = 4x1-7x2. x1(t) = e^(-3t)(1;1); b(1;1) + (1/4;0) x2(t) =  e^(-3t)(t(1;1)+(1;3/4)) = 
+e^(-3t)(t+1;t+3/4). W(x1, x2) /=/ 0. |x1 x2| /=/ 0. |e^(-3t) e^(-3t)(t+1); e^(-3t) e^(-3t)(t+3/4)| = e^-6t(-1/4) =
+-e^(-6t)/4 /=/ 0. Therefore {x1(t);x2(t)} are linearly independent. x(t) = c1x1 + c2x2. x' = Ax where A = (1 -2;2 5)
+lambda solving |1-lam -2; 2 5-lam| --> 5 + lam^2 + 4 - 6lam = lam^2 - 6lam + 9 = (lam-3)^2 --> lambda = 3, 3. 
+(2 0 0; -7 9 7; 0 0 2). Find lambda (l). (2-l)((9-l)(2-l) --> l = 2, 2, 9. For l = 2, (0 0 0; -7 7 7; 0 0 0) -->
+(-1 1 1; 0 0 0; 0 0 0) so -a+b+c = 0, b and c are free so v1 = (1;1;0), v2 = (1;0;1). l = 2 has 2 free vars. l = 9
+has 1. v3 = (0;1;0) so x(t) = c1x1+c2x2+c3x3 = c1e^(2t)(1;1;0)+c2e^(2t)(1;0;1)+c3e^(9t)(0;1;0). IVP x(0) = (0;1;2)
+so (0;1;2)=c1e^0(1;1;0)+c2e^0(1;0;1)+c3e^0(0;1;0), solve for c values. Consider x' = Ax = (1 1 1; 2 1 -1; 0 -1 1)x,
+if eigenvalues of A are 2 and -1, find fundamental solutions to system. If x(0)=(-1;2;6), find solution to IVP. 
+l = 2, am = 2, gm = 1 --> defective. dy/dx = f(y) = y(y-2), equilibrium solutions dy/dx = 0. 
+  </span></details></li>
+<li><details><summary>  Lecture 3: Separation of Variables: More Techniques</summary><span>
+So far, the linear differential equations we've been able to solve have all been easily separable by means of
+algebraic manipulation. However, not all DEs are like this, and today we're going to be covering some novel
+methods of solving problems of the form (dy/dx) + P(x)y = Q(x). When Q is 0, we call the resulting equation a
+homogeneous one. Now, we will cover the Method of Integrating Factor for ODE.
+
+Knowing the form y' + py = q, we can generate something called an integrating factor. Lets call it "m" for now.
+m = e^(integral of (p)dx). We do this for a special reason - it turns the left side of our equation into an
+easy-to-solve product rule. m(y') + pmy = qm. And since m is e^(integral of (p)dx), the left side is equivalent
+to d/dx (m * y). Through further integration and algebraic manipulation, the result is that y = (1/m) * integral
+of Qmdx. So for a problem such as y' + 2y/x = 9, p = 2/x so pdx = 2ln|x|, m = e^(2ln|x|) = x^2, so y = (1/x^2)
+* integral 9x^2dx, ergo the result is y = 3x + c/x^2. 
+
+Another way to find soltuions to homogeneous DEs is through the substitution method. This is done by having some
+function f(x,y), then creating a function F(y/x) and substituting u for y/x. For example, f(x,y) = (2x-y)/(x+4y).
+Both sides are divided by 1/x to get (2-(y/x))/(1+(4y/x)). This is form F(y/x). u = y/x and y = ux, so y' = ux' 
++ xu', and y' = u + x(du/dx). Therefore, y' = F(y/x), u + x(du/dx) = F(u), x(du/dx) = F(u) - u, and xdu = 
+(F(u)-u)dx. Then, du/(F(u)-u) = dx/x. 
+
+An example of this new technique is dy/dx = (x-y)/(x+y) = (1-(y/x))/(1+(y/x)) = F(y/x). u + x(du/dx) = (1-u)/(1+u)
+so x(du/dx) = (1-u)/(1+u) - (u(1+u))/(u+1). x(du/dx) = (1-2u-u^2)/(1+u), dx/x = (1+u)du/(1-2u-u^2). Integrate
+both sides, after some computation you will get an implicit solution of 1-2(y/x)-(y/x)^2 = (xc)^-2.
+</span></details></li>
+</ul></span></details>
+
+<details><summary>  Biology: The Basics ζ</summary><span>
+The essence of biology consists of four key concepts: Principles, Levels of Organization, Unity and
+Diversity of Life, and Biology as a Scientific Discipline. A cursory overview of the importance of biology
+is best demonstrated through two examples: penecillin and ziconotide. Penecillin was discovered by accident
+by Alexander Fleming, who noticed that bacteria was either not growing or growing very poorly around a
+yeast culture that he later determined had penecillin. This was inhibiting the growth of other cultures,
+and hence the first antibiotic was born. Nowadays, there are thousands, and new challenges to overcome, as
+bacteria are capable of rapidly adapting to antibiotics and developing a resistance to them. Ziconotide is
+a chemical isolated from sea snail venom and is a very potent pain killer, where only a tiny amount is needed
+to induce an effect similar to 100x that amount in morphine. Supposedly, it is also less likely that people
+will form a tolerance to it (at least to the same extent as they do with morphine) making it a safer and more
+effectuve painkiller.
+
+The core concepts of biology are evolution, structure and function, information flow (and exchange + storage),
+Pathways, Production, and Transformation of Matter and Energy, and Systems.
+
+03.07.2022
+Biology lecture. Approx. 20-30% of all genes encode transmembrane proteins. Membrane proteins are important
+medically and biologically. 70% of medications act on membrane proteins. Efforts focused on identifying genes
+that encode membrane proteins and how to predict if a gene will encode a transmembrane alpha-helix. 6000-7000
+transmembrane encoding genes in human genome. --- Osmium tetroxide to bond to polar outside of cell. Used for
+pulse-chase experiments which used radioactive amino acids. --- Freeze Fraction Electron Microscopy (FFEM) is
+sample frozen in liquid nitrogen, then fractured with a knife. Then inside of sample can be analyzed. Leaflets
+separate into P and E faces, then spray with heavy metal like platinum to see the membrane protein (which appear
+as bumps). --- Membranes are semifluid, since lipids can rotate freely around their long axes and move laterally
+within the membrane leaflet. At body temp neighboring lipid molecules switch places 10^7 times per second. Flip-
+flop of lipids - lipid from 1 leaflet will move into the other leaflet. This is energetically unfavorable and
+uses a transport protein (flippase), process requires ATP. --- Lipid rafts - group of lipids that float together
+as a unit within the larger sea of lipids in the membrane. Has high concentration of cholesterol, and can aid
+with information transmission. Lipid rafts are dynamic and thus difficult to study. --- Shorter fatty acid
+tails make the membrane more fluid. More double bonds and unsaturated acid tails will also be more fluid.
+Cholesterol makes membranes less fluid at higher temps and more fluid at lower temps. Transmembrane proteins
+can also rotate and move laterally but they are much slower than lipids. They never flip-flop. Frye and Edidin
+in 1970 fused mouse and human cell and demonstrated lateral movement of membrane proteins. Not all membrane
+proteins can move - depends how tightly it is anchored to other structures in the cell. --- Plasma membrane is
+selectively permeable. Passive transport - simple/facilitated diffusion via concentration gradient (for example
+how water follows salt). Active transport requires ATP, transports molecules against concentration gradient.
+
+3.21.2022
+Biology lecture. Muscle contractions, cellular organization, protein sorting, chemical reactions all require
+energy to be performed. No system is fully efficient so some energy will be lost as heat. So enthalpy in cell
+is G (usable energy) + entropy. If change in G is negative, free energy is released and the process is
+exergonic. If change in G is positive, free energy is consumed (energy is required for the reaction to occur)
+and thus the reaction does not occur spontaneously. Change in G for ATP hydrolysis is -7.3kcal/mole (so it is
+spontaneous). Enzymes and coupling regulate ATP usage so excess ATP is not used up spontaneously. 
+Glucose + Phosphate --> Glucose-6-Phosphate + H2O, change in G is 3.3kcal/mole so not spontaneous. Humans
+hydrolize 100 pounds of ATP per day. ATP --> ADP + energy, ADP gets recycled back into ATP. 20% of proteins
+bind ATP. Allows us to predict if a new protein uses ATP or not. Most chemical reactions in cells require
+a catalyst to proceed faster. Catalyst does not get consumed during the reaction and can be reused. Example:
+catalase in peroxisomes causes peroxide decomposition to occur 10^15 times faster. Catalysts lower the
+activation energy of a reaction. Emil Fischer came up with the lock and key metaphor for substrate-enzyme
+bonding, where the substrate snugly fits into the the enzyme in such a way that other molecules wouls not be
+able to. More and more substrate causes more engagement with enzyme molecules, plateau occurs because the
+quantity of enzyme is not enough to handle all the substrate (this state is called saturation). Michaelis
+constant Km is substrate concentration (molar) where velocity is half of the maximum value. Inhibition of
+enzymatic reactions: two types. Reversible or irreversible. Reversible has two sub-parts: competitive and
+noncompetitive inhibition, where binding between enzyme and inhibitor is noncovalent. Irreversible has an
+enzyme-inhibitor bond that is covalent. Thus, the enzyme is permanently deactivated. Competitive inhibition:
+inhibitor competes for the active site of the enzyme with the substrate. Noncompetitive inhibition: inhibitor
+changes the 3D structure of the protein by binding to the allosteric site of an enzyme. Irreversible
+inhibition: DIPF (nerve gas) deactivates acetylocholinesterase, which is in charge of breaking down ACh and
+limits muscle contraction. 
+
+3.23.2022
+Biology lecture. Ribozymes - until 1980s scientists thought all enzymes were proteins. Discovery of
+ribonuclease P (RNapse P) changed this view. This enzyme is found in every live organism. Has two subunits, RNA
+and protein. RNA alone can catalyze the chemical reaction, so RNA can also function as a catalyst. Catabolic
+pathways are the breakdown of cellular components, is exergonic. Anabolic pathways build cellular components,
+are endergonic. Glucose oxydation requires NAD+, NAD+ becomes NADH. Hydrolysis of NADH is exergonic, change in
+G is -158.2kJ. NADH used to make ATP. Metabolic pathways are regulated so the cell doesn't overproduce or over-
+consume. Three methods of regulation: gene regulation, cellular regulation, biochemical regulation. Gene
+regulation example: E. coli introduced to lactose, gene activates to make special proteins for bringing in and
+breaking down lactose. When no more lactose left, gene turns off. Ubiquitin is used to tag proteins for them to
+be broken apart by proteasomes. Cellular respiration: aerobic, anaerobic, fermentation. Aerobic: glucose gets 
+oxidized to form CO2 and H2O. Glucose has a lot of potential energy so a lot of free energy is released on break-
+down. Glycolysis, breakdown of pyruvate, citric acid cycle, oxidative phosphorylation convers the glucose energy
+into ATP. Glucose -> 2 pyruvate -> into mitochondria -> breaks down into 2 CO2 and 2 acetyl -> citric acid cycle
+-> 2 acetyl into 4 CO2. During the citric acid cycle, NADH and FADH formed, chemiosmosis done to form a lot of ATP.
+
+4.4.2022
+Biology lecture. Cell cycle. Eukaryotic cell cycke: human body contains 10-50 trillion cells, all derived from
+fertilized egg. Forms from fusion between sperm and egg cell after many cell divisions. Mitosis: one mother cell
+divides into two daughter cells, daughter cells have equal amount of genetic material as mother chromosomes. Meiosis
+is mother cell dividing into two daughter cells, daughter cells have half the genetic material of the mother cell.
+Bacteria, mitochondria, chloroplasts divide through binary fission. Cytogenetics: the microscopic examination of
+chromosomes and cell division. Karyotype: reveals number, size, and for of the chromosomes in an actively dividing
+cell. 23 pairs of chromosomes --> 46 chromosomes per human cell. But sperm and egg cell have only 23 chromosomes.
+This is why sperm and egg cells are referred to as gametes, or haploids. Most cells are diploids (2n) with 46
+chromosomes. MTFHR gene: sequence snippet: ACAGC -- Single Nucleotide Polymorphism --> ATAGC, C[change location]T.
+Folic acid absorption varies - MTFHR gene improves, polymorphism means that it slows down. Folic acid prevents neural
+problems with babies. Homologues: OCA2 Chromosome 15 determines eye color, one copy may carry the form that confers
+blue eyes, the other copy may carry the form that confers brown eyes. X and Y chromosomes are not homologous. Eye
+color sometimes changes from blue to some other color in early life due to pigment production. Cell cycle. Interphase:
+cell grows and prepares for cell division. In the interphase: G1 (gap), synthesis of DNA, G2 (gap). Then, mitosis.
+G1 phase: cell becomes committed to divide, cell growth occurs. Cell checks if it has any mutations. Synthesis phase:
+chromosomes replicate, after replication two copies stay joined together and are called chromatids. G2 phase: cell
+synthesizes proteins needed during mitosis and cytokinesis (spindle proteins). Cyclins: amount varies through the
+cell cycle. Cdks are kinases controlling the cell cycle, must bind to cyclin to be active.
+
+Quiz Review Brief: 10 questions. Glucose in cellular respiration in aerobic respiration forms CO2 and H2O. Exergonic
+rxn. Energy intermediates ATP, NADH, FADH2. Glycolysis breaks down glucose into two pyruvates in cytosol. Pyruvate
+broken down into two acetyl in mitochondrial matrix. Citric acid cycle in mitochondrial matrix turns the two acetyl
+into 4 CO2. Oxidative phosphorylation occurs in inner mitochondrial membrane. Proton gradient is created, then flow
+of protons across gradient through ATP synthase creates ATP. 
+
+4.6.2022
+Biology Lecture. Control of the cell cycle. Interphase includes G1, S, G2. Interphase comprises most of the time the
+cell spends in the cell cycle. M (Mitosis) is the shortest part of the cell cycle. G1 checkpoint (restriction pt):
+determines if conditions are favorable for cell division and if the DNA is damaged. G1 cyclin is made in response to
+sufficient nutrients and growth factors. G1 cyclin bonds to cdk to become activated as a complex. If DNA is damaged,
+cyclin/cdk complex is not formed, progression of cell cycle stops. Once S phase is entered, G1 cyclin is degraded,
+cdk remains. Mitotic cyclin accumulates in G2, also forms complex with cdk. G2 checkpoint checks for DNA damage,
+determines if all of the DNA is replicated, monitors protein levels needed for M phase. Then G2 cyclin degrades and
+cdk remains. Metaphase checkpoint is next - determines if all chromosomes are attached to the spindle apparatus. 
+What are the molecules that drive the cell from one phase cycle to the next? Masui and Markert's study of frog
+oocyte. Frog oocytes are dormant in G2 up to 8 months, then when progesterone enters oocyte, G2 progresses to M.
+This process is called maturation. Hypothesized maturation promoting factor (MPF) - long term exposure to
+progesterone molecule caused MPF to be made (2 hours was not enough). Mitotic cell division is important due to it
+allowing asexual reproduction, and the development and growth of multicellular organisms (recovering from injury).
+When DNA is replicated, two identical copies of the double helix are produces. These copies are side by side and are
+called sister chromatids. Easy to see under microscope. Mitotic spindle ensures that each daughter cell will have
+the correct number and types of chromosomes. Astral microtubules position spindle in the cell, polar microtubules
+separate the two poles, kinetochore microtubules attach to the kinetochore. Mitosis phases: prophase, prometaphase,
+metaphase, anaphase, telophase. Then cytokinesis, which is not part of mitosis. Prometaphase: mitotic spindle fully
+formed, centrosomes move apart and demarcate the two poles, once nuclear envelope has dissociated, spindles can
+allow chromatids to interact. Microtubules grow out from the two poles. Metaphase: pairs of sister chromatids have
+aligned halfway across the cell, attached to kinetochore microtubules. Anaphase: connection between sister
+chromatids are broken, each individual chromatid is linked to only one pole by kinetochore tubules, kinetochore
+microtubules shorten to pull chromosomes towards pole, polar microtubules lengthen so the two poles move further
+from each other. Telophase: chromosomes have reached respective poles, nuclear membranes reform to produce two
+separate nuclei, cell membrane folds inwards for cytokinesis to occur. Cytokinesis in animals: cleavage furrow
+constricts to separate the cells. Cytokinesis in plants: cell plate forms a cell wall between the two daugther cells.
+Bacteria divide via binary fission - after chromosome replication, each copy of the chromosome becomes anchored
+to the plasma membrane. FtsZ protein forms ring, constricts bacterial cell, creates two daughter cells. FtsZ is
+evolutionarily linked to tubulin. Tubulin in eukaryotes, forms linear microtubules, and acquired additional roles
+in cell division: division of the nucleus, sorting of chromosomes. Meiosis: homologous pairs form a bivalent,
+crossing over. Homologous pairs of sister chromatids positioned side by side in a bivalent way (4 chromatids).
+Process is called synapsis. Synaptonemal complex connects sister chromatid pairs. Physical exchange between
+chromosome segments of the bivalent. This may increase the genetic variation of a species. Chiasma shape.
+Humans have an average of 2 crossovers per chromosome.
+
+4.11.2022
+Biology Lecture. Meiosis division. Prometaphase 1: spindle apparatus is complete, chromatids attach to kinetochore
+microtubules. Each pair of sister chromatids attaches to a single pole. (In mitosis, each pair of sister
+chromatids attaches to both poles). Metaphase in meiosis: bivalents organized along metaphase plate as double row.
+Arrangement of sister chromatids is random with respect to the homologs - this promotes genetic diversity. 23
+chromosomes per set means 2^23 options just from chromosomes (not including crossing over). 1 diploid cell
+produces 4 haploid cells. Short arm of the chromosome is p (petit), long arm is q. Metacentric, submetacentric,
+acrocentric, telocentric. Chromosome structural changes: deletions, inversions, duplications, translocations.
+Deletions happen when a region of the chromosome is deleted, likewise for duplication. Translocation is exchange
+of one chromosome fragment with another chromosome. Euploid vs polyploid: polyploid is when cell has three or more
+sets of chromosomes. If 3 copies, triploidy, if 4, tetraploidy, etc. Aneuploidy refers to when the number of
+chromosomes of one pair of chromosomes is changed instead of all of the chromosomes. Trisomy 2 (2n+1), monosomy 3
+(2n-1). Nondisjunction: chromosomes do not sort propely during cell division. Can happen in meiosis 1 or 2. If in
+meiosis 1, all 4 products are chromosomally abnormal. If in meiosis 2, only 2 products are chromosomally abnormal.
+Alleles are different variants on homologous chromosomes. Spermatogenic cells, sustentacular cells. Interstitial
+cells are in between seminiferous tubules, create and release testosterone. Myoid cells surround seminiferous
+tubules. Spermatogenisis starts in spermatogenic cells, spermatogonia (divide mitotically before puberty). At
+puberty, spermatogonia become fully functional stem cells and divide by mitosis. One daughter cell remains a stem
+cell, while the other daughter cell becomes primary spermatocyte. Spermatocyte undergoes first meiotic division,
+forms two secondary spermatocytes (haploid). Secondary spermatocytes undergo meiosis 2, form 4 haploid spermatids.
+Sustentacular cells surround spermatogenic cells and provide support, extend from basement membrane to seminiferous
+tubule lumen. This anatomical arrangement forms the blood-testes barrier. 
+
+4.18.2022
+Biology Lecture. Oogenesis begins before female infant is born. Primary oocyte makes two cells: first polar body and
+secondary oocyte. 1st polar body and secondary oocyte are each haploids. 1st polar body degenerates because of lack
+of cytoplasm. Secondary oocyte is arrested in metaphase 2, if fertilized will complete the second meiotic division.
+Both spermatogenesis and oogenesis produce gametes (23 chromosomes). Different cell sizes: ovum receives most of
+nutrient rich cytoplasm, sperm cell does not recieve much cytoplasm. Chromosomes contain DNA and proteins. In late
+1920s Fredrick Griffith was working with pneumococcus, concluded that "S" type bacteria is virulent, "R" type is
+benign. Heat-killed "S" type bacteria were also benign. Mix of live "R" type and heat-killed "S" type is virulent.
+Therefore there is some material that the dead "S" bacteria transferred to the "R" bacteria, making them virulent.
+1940s: Avery, MacLeod, McCarty used purification methods to reveal that DNA is the genetic material. Incubate
+isolated DNA with "R" type bacteria. Various trials. Result is that DNA is found to be responsible as the genetic
+material. 
+
+4.25.2022
+Biology Lecture. Telomerase functions - cells without telomerase result in senescence, cells with telomerase result
+in no senescence. Cancer cells found a way to overcome senescence, and 99% of all types of human cancers have high
+telomerase levels. Stem cells also have high telomerase. How does DNA get packaged into the cell? Two conditions:
+it has to fit, it has to be easy to find specific genes. 3.2 billion base pairs. Chromosomes are the morphological
+meaning, chromatin is biochemical meaning (DNA + Proteins that have organized DNA). DNA wrapping around histone
+proteins forms nucleosomes (beads). Shortens DNA 7-fold. Histone octamer (4 types, 2 copies of each) H2A, H2B, H3,
+H4. 146-147 base pairs of DNA wrapped around octamer. If DNA is tightly wrapped around the histone it is more
+difficult to read. Histone proteins have tails (N-terminus) that protrude from the octamer. Lysine and arginine
+residues on N-terminus attract negative charges of phosphates. Lysine acetylation forms acetyl-lysine, neutralizes
+positive charge, histone tails no longer attract DNA. Acetylation is reversible. Chromatin compaction - studies in
+animals and humans show that Alzheimer's disease has lots of histone tail deacetylation years before disease
+becomes apparent in specific brain regions. H1 histone linker - 20-100 base pair DNA connects nucleosomes, depends
+on species and cell type. 30 nm fiber (zig zag structure) additional 7-fold compaction. Radial loop domains
+created by the interaction between 30 nm fibers and proteins in the nuclear matrix (nuclear lamina). Radial loop
+domains organize chromosome territories. On chromosomal level compaction is not identical - euchromatin is less
+compacted, heterochromatin is highly compacted. Inborn errors of metabolism: in 1908 proposed relationship btwn
+genes and enzyme production. Phenylalanine - amino acid found in human diet, phenylalanine hydroxylase breaks it
+down into tyrosine. Mutations cause phenylketonuria. Alkaptonuria - homogentisic acid builds up in the body, gets
+deposited into various tissues. Leads to arthritis, ears, connective tissues, etc. Disease caused by missing
+enzyme - inborn error of metabolism. Beadle and Tatum experiment - neurospora crassa. If we mutate a gene that
+makes an amino acid, we must give it that amino acid to grow. One-gene one-enzyme hypothesis. DNA -transcription->
+RNA -translation-> Protein. Structural genes make an mRNA which gets translated. Gene is an organized unit of DNA
+sequences that enables a segment of DNA to be transcribed into mRNA and ultimately results in the formation of a
+functional product. 
+
+4.27.2022
+Biology Lecture. Genes - promoter signals beginning of transcription, transcribed region contains info on amino
+acid sequence, terminator signals the end of transcription. Regulatory sequences bind regulatory proteins to change
+rate of transcription, inhibit/enhance transcription of a gene. 3 stages of transcription - initiation, elongation,
+termination. Initiation is a recognition step, in bacteria, sigma factor causes RNA polymerase to recognize the
+promoter region. Completed when the 2 DNA strands separate near the promote to form an open complex. Elongation -
+polymerase synthesizes RNA, template 3' to 5' used for RNA synthesis. Coding strand 5' to 3' is not used. mRNA
+synthesized to 5' to 3'. mRNA has the same nucleotide sequence as the coding strand except U substitutes T residue.
+Termination - RNA polymerase reaches terminator sequence, causes both polymerase and newly made mRNA to fall off.
+Synthesis of RNA transcript is always 5' to 3', DNA template strand reads 3' to 5'. Direction of transcription and
+which DNA strand is used varies among genes. RNA polymerase II make mRNA, polymerase I and III make structural
+RNA. RNA polymerase II in eukaryotes has 5 . Bacterial mRNA can be translated immediately, eukaryotic mRNA made as
+longer pre-mRNA, requires processing into mature mRNA. Splicing - removal of introns. Addition of cap, addition of
+a tail. Recognition sequences on boundary between introns and exons which allows for splicing out of introns.
+Exons are transcribed and translated. 5' cap and 3' poly A tail. Splicing happens in RNA not DNA. Splicing first
+described in 1977 - loop like structure for introns before they get cut out. Capping - modified guanosine attached
+to 5' end. 7-methylguanosine, recognized by cap binding proteins. Prevents mRNA degradation in the cytosol, helps
+mRNA bind to the ribosomes. Poly A tail - 100 to 200 adenine nucleotides added to 3'-end. Helps export mRNA into
+the cytosol, increases stability in the cytosol, not encoded in the gene sequence. Average human gene has 9
+introns, intron size 10-100k nucleotides. Spliceosome removes introns precisely. Composed of snRNPs (small
+nuclear RNAs + proteins). Alpha-tropomyosin - protein found in thin filaments of muscle. Alternative splicing -
+do not have to have same resulting protein. Exon 2 used in smooth muscle, Exon 3 used in striated muscle. One
+set of genome can create diverse proteome due to alternative splicing. 4 bases in DNA, 2 bases combo makes 16
+codons, but 20 amino acids. Combination of 3 bases specify 64 codons. The genetic code is degenerate so more
+than one codon can specify the same amino acid. This provides some protection against mutation. ATG/AUG = start
+codon. 3 stop codons: TAA/UAA, UAG/TAG, UGA/TGA. tRNAs in bacteria, archaea, and eukaryotes share common features.
+Different tRNA molecules present in a cell, encoded by different genes. Amino acid attachment site at the 3'
+single stranded region. Anticodon, Stem-loop, hydrogen bonds present. Cell has several tRNA(Ser) molecules. 
+
+5.4.2022
+Biology Lecture. 98.5% of human genome is non coding, "junk DNA" that doesn't get translated. Several classes:
+rRNA, tRNA, lncRNA, etc. In charge of encoding RNA molecules that get formed because of transcription and don't
+get translated. MicroRNAs (miRNAs) one class of non-coding RNA molecules, around 22 nucleotides long. Silence the
+mRNA (messenger RNA) molecules. Are complementary to mRNA thus capable of binding to it in order to silence the
+molecule. mRNA does not get translated as a result. Called RNAi (RNA interference). MicroRNAs provide a path to
+inhibit the creation of a protein by silencing the problematic portion of the mRNA. pre-miRNA cut by Dicer to
+release the miRNA, associates with cellular proteins to become RNA-induced silencing complex (RISC). Upon binding
+mRNA is degraded. 1 miRNA binding to mRNA is sufficient to block translation. Mutation, DNA repair, and cancer.
+Mutation is a heritable change in the sequence of the genetic material. Source of variation for natural selection,
+to the individual, mutations more likely to be harmful than beneficial. All species have developed ways to repair
+mutations. Base substitution (T to G), base insertion/deletion. Silent mutations do not alter the amino acid
+sequence, possible due to the degeneracy of the genetic code. Occurs in the 3rd base of codons. Missense mutations
+change a single amino acid in a polypeptide. Less likely to alter function if the substituted amino acid is similar
+in chemistry to the original one. Sickle cell disease (mutation in the beta-globin gene). Nonsense mutations -
+change from a codon encoding an amino acid to a stop codon, produces a truncated polypeptide. Intergenic region is
+least likely to cause problems. Germ-line or somatic cell mutation - germ-line give rise to gametes, somatic cells
+(rest of the body) gives a genetic mosaic with patches of mutant tissue. Disruption of base pairing due to a
+mutagen. Nitrous oxide exposure with cytosine forms uracil, pairs with adenine (C to U, U pairs with A). Mustard
+gas alkylates bases, adding methyl or ethyl groups. Guanine modified to ethylguanine, which pairs with thymine.
+Base analogues - 5 bromodeoxyuridine (5-BU) can exist as keto or enol form, binds to adenine or guanine. Physical
+mutagens via ionizing and nonionizing radiation. X-rays, gamma rays can break one or both strands of DNA. UV has 
+less energy and can crosslink two thymines. Ames test to determine if a chemical is a mutagen. Uses Salmonella
+typhimurium that cannot synthesize histidine due to a point mutation. Bacteria cannot grow unless histidine is
+added to the medium or a second mutation occurs that fixes the original, allowing for synthesis to occur. Test
+monitors the rate at which mutation occurs. Types of DNA repair - direct repair, MGMT removes methyl group from
+methylguanine, "suicide mission." Base exclusion repair (BER) corrects small base lesions that do not significantly
+distort the DNA helix. Damage typically results from deamination, oxidation, or methylation. Nucleotide excision
+repair best for bulky regions. Uncontrolled cell division --> cancer and other disease, 25% of deaths in the US are
+from cancer. Many cancers occur due to exposure to physical or chemical agents that cause mutations (exposure to
+mutagen). Carcinogen - can cause cancer but doesn't involve mutation. Cancer happens when something goes wrong with
+one cell and that cell loses cell-cycle control, starts replicating into a tumor. Oncogenes normally need to be
+silenced, lead to cancer when overactive. Tumor suppressor genes normally need to be active, lead to cancer when
+inactivated. Oncogene may promote cancer by keeping the cell division signaling pathway in permanent "on" state. 
+RAS GTP to GDP hydrolyzation. Some mutatiosn convert Ras to oncogenic Ras, decreased GTP hydrolysis activity,
+higher levels of active Ras, faster cell divisions. 
+</span>
+</details>
+
+<details><summary>  Chemistry: The Basics</summary><span>
+Info to be added later. Covers stoichiometry, acids & bases, buffers & titrations, basic thermodynamics.
+</span>
+</details>
+
+<details><summary>  Physics: The Basics</summary><span>
+Info to be added later. Covers kinematics, rotational motion, fluid mechanics (lightly), goes up to optics.
+</span>
+</details>
+
+<details><summary>  Physics 3: Waves, Optics, and Thermodynamics ζ</summary><span>
+Decided to take this instead of discrete math as it's a course I will have to take in the future. I think
+learning the content sooner rather than later is a fine idea. Expect infrequent but lengthy posts on this
+class (and possibly some revision posts next fall, when I actually take it for credit).
+</span>
+</details>
+
+<details><summary>  Physical Chemistry - Quantum Chemistry and Mechanics ζ</summary><span>
+<ul class="layman"><li><details><summary>  Lecture 1: A Quick Introduction to Waves</summary><span>
+Let's begin with some pretty tough physics. Hey, at least it's not quantum...yet. So we're going to begin with
+classical waves. Classical waves are common in everyday life. They include sound waves, water waves, and many
+more, but today we're going to talk about a specific example of a vibrating string.
+
+A vibrating string is effectively just a deformed string that has a restoring force towards its original
+position. However, this restoring force overshoots the original position, and then continues overshooting back
+and forth until it finally settles into an equilibrium where the string is no longer vibrating. This decaying
+overshoot is referred to as damping, and it adds a lot of complexity, but luckily we can ignore it here (so the
+string vibrates infinitely.)
+
+So let's have a string along which there is a length x, and allow the deformation amount to be the variable 'psi.'
+We can express psi as a function of x and t, where t is time. We must also remember that for the string to be
+vibrating, there must be a restoring force. Use F=ma and convert it into derivative form (so F=m*(d^2(psi)/
+dt^2)) [or put simply, the second derivative of psi over the second derivative of time]. Why is this important?
+Well, the restoring force is proportional to something called the curvature of the string, and the curvature of
+the string can be expressed as the second derivative of psi over the second derivative of x. This allows us to
+end up with the expression [(d^2(psi)/dt^2) = k*(d^2(psi)/dx^2)] where k is some constant. However, we can actually
+determine what k is. On the left, time is in the denominator while on the right "x" is, we need the expressions to
+be equal so we must multiply (d^2(psi)/dx^2) by a term that is (length)^2/(time)^2. So it follows that this is just
+velocity^2, or v^2.
+
+So, [d^2(psi)/dt^2 = v^2*d^2(psi)/dx^2]. But not really. I haven't covered calculus 3 here yet but since psi is
+a function of x and t, you would use partial derivatives (this means you treat the non-derived variables as some
+constants.) I will be using PD for partial derivative denoting but commonly it is a lowercase delta from the Greek
+alphabet. A quick example is PD(x) of x^2+5y^3+6yx^5. Treat y as a constant, so you have 2x+0+30yx^4.
+
+Now back to waves and vibrating strings. A common way to express a travelling wave (which is what we're dealing
+with) is psi(x,t) = Asin(wt-kx), where w and k are constants. If we take 2 PDs of psi with respect to x, we end up
+with -k^2(Asin(wt-kx)). Doing the same with respect to t yields -w^2(Asin(wt-kx)). You may notice that the original
+expression of psi is still in both formulas, so we can rewrite them as -k^2(psi) and -w^2(psi.)This is useful 
+because we've now rewritten the equation from the first sentence, previous chapter. So -k^2*v^2*psi = -w^2*psi.
+We can now solve for v^2 - some algebraic manipulation will show that it is w/k.
+
+We have this psi sine wave formula, and we can manipulate either the x or t term to see two different things. If 
+we go through all the values of time, we will have all of the temporal (time-based) information at some fixed x
+value. If we go through all the values of x, we will have all the spatial info - we freeze time and see a snapshot
+of the wave equation. We can also use the properties of sines to get more information about the wave equation. A
+(regular) sine wave is always uniform - the value at sin(0) is the same at sin(2pi), et cetera. We can use this to
+always know when the peak of the sine wave is: the angle is (pi/2)+2n(pi), where n is an integer. Sine of pi/2 is
+1, the maximum value, and the period of the sine wave is 2pi, hence the peaks repeat. If we solve for the peak
+(pi/2)+2n(pi) such that it is equal to wt-kx, the internal component of the wave equation, we can get more
+information on the nature of the wave function.
+
+It is stipulated (pi/2)+2n(pi) = wt-kx. Manipulating this algebraically, x = ((-pi/2)-2n(pi)+wt)/k. And x here
+changes values based on n, so x_0 is ((-pi/2)+wt)/k, and x_1 is ((-pi/2)-2(pi)+wt)/k. The difference between these
+two values is important: it's 2pi/k, and this value is equal to the wavelength of the wave function. The symbol is
+denoted as lambda. 2pi/k = lambda and 2pi/lambda = k, so the units of k are 1/m (since lambda is a length). From
+the formula x = ((-pi/2)-2n(pi)+wt)/k we can take a derivative with respect to time to get velocity. This resolves
+to v = w/k, which should seem familiar from earlier. This establishes that its the velocity is in the wave equation,
+not velocity*(some constant).
+
+A period, represented by tau, is the time between 2 consecutive maxima in the sine wave. Since v = distance/time,
+time is distance/v. Therefore tau = lambda/v, since the units work in the same way. But continuing with the algebra,
+tau = lambda/v = (k*lambda)/w = 2pi/w. Another term you need to know here is frequency, which is 1/tau and denoted
+by the greek letter nu. So, nu = w/2pi, so w = 2(pi)nu which is the angular frequency. We can also express v as
+nu*lambda.
+
+We are familiar with Asin(wt-kx) now, and it is necessary to ask what happens if k is negative. Well, the function
+travel direction reverses (leftwards instead of rightwards). So this is another solution to the wave function.
+Critically, linear algebra dictates that the sum of two solutions to a function will yield another solution: this
+is called superposition. So a possible wave function is Asin(wt-kx) + Bsin(wt+kx), where A, B, w, and k can be any
+number (as long as w/k = v). 
+
+On its own, though, this isn't very useful. We need to set boundary conditions on the vibrating string by fixing
+its position at two points (akin to a string in real life). Assuming fixed points are x = 0, L, we can start
+plugging numbers into our new wave function. psi(0,t) = Asin(wt-k0) + Bsin(wt+k0) = 0. So, A = -B. psi(L,t) =
+Asin(wt-kL) - Asin(wt+kL) = 0. Using a trigonometric identity*, this results in A[sin(wt)cos(kx) - cos(wt)sin(kx)]
+- A[sin(wt)cos(kx)+cos(wt)sin(kx)]. *The identity is sin(A+B)=sinAcosB+sinBcosA. Then by cancelling things out,
+the result is -2Acos(wt)sin(kx) = psi(x,t). This is now a standing wave - the minima and maxima locations are
+fixed and are determined by kx = (pi/2) + n(pi). At the fixed points, kL = n(pi), so k_n = (n(pi)/L). From this,
+w_n = (n(pi)v/L). [END OF LECTURE 1]
+</span></details></li>
+<li><details><summary>  Lecture 2: Review and Intro to the Schrodinger Equation</summary><span>
+As was discussed in the last lecture, a vibrating string obeys the classical wave equation, which is expressed by
+(PD^2(psi)/PDx^2) = (1/v^2)(PD^2(psi)/PDt^2), This is a linear partial differential equation, or LPDE for short.
+We also went over superposition, which is a property of linear differential equations that states that two LDE
+solutions can be summed to create a 3rd solution. With some algebraic manipulation, we were able to get the formulae
+for traveling waves and standing waves.
+
+The Schrodinger equation is not very far from the classical wave equation, but one of its most distinct features
+is the inclusion of the imaginary number "i," which we will briefly go over. "i" is an imaginary number that is the
+equivalent of the square root of -1. It follows that i^2 is -1, i^3 is -i, and i^4 is 1. Complex numbers are a
+combination of a real number and an imaginary number. The general form of a complex number is x + iy. The inclusion
+of x and y is important, as it is useful for visualization. Imagine a cartesian plane, but instead of the y-axis
+being real numbers, they're imaginary (so, real number*i). With this cartesian plane, we can now plot these complex
+numbers. We can use the Pythagorean theorem to determine their distance from the origin, and name that term "r,"
+because it's essentially a radius. So, r = sqrt(x^2+y^2). We've basically created a triangle, so let's call the
+angle it makes with the +x axis "theta." All the trigonometric rules apply: tan(theta)=y/x, sin(theta)=y/r,
+cos(theta)=x/r. In other words, x=rcos(theta) and y=rsin(theta). So the complex number can also be expressed as
+r(cos(theta)+isin(theta)), and we can use Euler's identity to express that as re^(i*theta). Euler's identity is a
+result of the power series expansion of e^x but with (i*theta) instead of x, and is a fun proof if you're studying
+Calculus 2. The last bit of knowledge needed on complex numbers is their conjugate: x+iy has a conjugate of x-iy.
+This is useful because a complex number * its conjugate is x^2+y^2, which is r^2.
+
+It's time for the Time-dependent Schrodinger Equation. (-h_bar/i)(PD(psi)/PDt) = (-(h_bar^2)/2m)(PD^2(psi)/PDx^2)
++ V(x,t)psi(x,t). Let's definie some terms. V(x,t) is the potential energy function, h_bar is Planck's constant/2pi,
+psi(x,t) is the state function, which has all the information about the actual system. This formula is pretty much
+underivable - much of it was deduced by experiment. It's also very complex, so we're going to simplify it to the
+Time-independent Schrodinger Equation. (-h_bar/i)psi(x)(df(t)/dt) = (-(h_bar^2)/2m)f(t)(d^2(psi)/dx^2) 
++ V(x)f(t)psi(x). So what changed? Well, we performed a separation of variables, so now we're dealing with normal
+instead of partial derivatives. We can simplify this further though, by dividing by f(t)psi(x). This gives us the
+expression (-h_bar/i)(1/f(t))(df(t)/dt) = (-(h_bar^2)/2m)(1/psi(x))(d^2(psi)/dx^2) + V(x). Since both sides are
+equal but have different variables, this means both sides are constant. We can call this constant "E" for energy.
+Solving the left side for E is simple - isolate 1/f(t)*df(t)/dt and then integrate both sides. You should get
+f(t) = Ae^(-iEt/h_bar), where A is just a constant. The useful manipulation for the right side isn't a full
+solution - the formula you want to end up with is (-(h_bar^2)/2m)(d^2(psi)/dx^2)+V(x)psi(x) = E*psi(x).
+[END OF LECTURE 2]
+</span></details></li>
+<li><details><summary>  Lecture 3: Probability Density, Particle in a Box</summary><span>
+One of the postulates of Schrodinger's equation is that the state function (or the more simple wave function) can
+have its absolute value squared in order to determine the probability that a particle is in a given region of 1
+dimensional space. A probability of 0 is 0%, while a probability of 1 is 100%. Thus it must follow that an integral
+from -(infinity) to +(infinity) of the probability density equation will yield 1 - the particle is guaranteed to be
+in some place in space. This is called normalization. For the simpler wave function, we have the necessary tools to 
+evaulate these probabilities. 
+
+While the probability density formulas have a lot of variety, the proper ones are always normalizable and positive.
+You can't have a negative probability, it doesn't really make sense. The probability of finding the particle between
+points x = a and x = b is the integral from a to b of |(psi)|^2 dx. 
+
+A particle in a box is the simplest solvable quantum mechanics problem in 1D (at least, not including probability).
+Earlier, we came up with the formula (-(h_bar^2)/2m)(d^2(psi)/dx^2)+V(x)psi(x) = E*psi(x). For the purposes of the
+particle in a box, we will assume V is a constant. So, we can do some simplification. (-(h_bar^2)/2m)(d^2(psi)/dx^2)
+= (E-V)psi(x), which leads to d^2(psi)/dx^2 = (-2m(E-V)psi(x))/(h_bar^2). Important thing to note here is that while
+in Classical Mechanics, E-V is always positive (the potential energy never exceeds the total energy), in Quantum
+Mechanics, this is not the case. In fact, we have a name for times when V exceeds E: quantum tunneling. This makes
+sense if you draw a potential energy diagram and then set a random total energy bound. A quantum particle "tunnels"
+into the potential energy graph when it exceeds the total energy in the system. 
+
+With quantum tunneling out of the way, we can establish more rules for this particle in a box formula we came up with.
+For E > V, psi follows a function like Asin(kx), where k is the square root of (2m(E-V)psi(x))/(h_bar^2). For V > E,
+psi follows an exponential function like Ae^(+/- kx), where k is sqrt of (2m(V-E)psi(x))/(h_bar^2). This lets us look
+at the qualitative behavior of the wave function - how it looks like on various potential energy graphs. 
+
+Now let's set up the actual box for the particle: we do the walls by setting V to infinity, By solving for psi there 
+we get 0. Knowing probability density, this means there is 0 chance of the particle being there, since |0|^2 is still 0. 
+For the "floor" of the box, we set V to 0. From this we get a familiar equation: psi(x) = Acos(kx)+Bsin(kx). This should 
+remind you of the vibrating string standing wave - it is basically like that. Next, we can start solving problems for
+the particle in the box - for example, energy level problems. [END OF LECTURE 3]
+</span></details>
+<li><details><summary>  Lecture 4,5: Particle in a Box Cont., Particle in a Rectangular Well, Operators</summary><span>
+Going back to last lecture, a Particle in a Box (or PIAB) is described by the potential energy equation V(x) = 0 within
+the box and V(x) = infinity outside of the box. This keeps the particle from tunneling into the box walls, and allows
+for a solution that is akin to a standing wave from classical physics (more or less). We can use boundary conditions at
+x = 0 and x = l to find out more about this particle. The solution for V(x) = 0 can be represented as Acos(kx) + Bsin(kx)
+= 0. Ergo, for x = 0, A must = 0. For x = l, we're left with just Bsin(kl) = 0, which means the kl term is a multiple of
+pi, also expressed as n(pi). Thus l = (n(pi)/k). Since V(x) = 0, we can express k using a formula from last lecture as
+sqrt(2mE/(h_bar^2)). So, we can express l as equal to n(pi)sqrt((h_bar^2)/2mE), where n is a positive integer. If n = 0
+we just have an empty box, which isn't useful for solving various problems. Same goes for B = 0: empty box.
+
+We can rearrange this formula for l to solve for E, the energy level. This reveals some interesting information. After
+algebraic manipulation, E = (n^2*h^2)/(8ml^2). This formula is critical because it means that on the quantum scale, energy
+values are discrete, or in other words, quantized. This is due to n being an integer. In addition, it follows that energy
+increases quadratically, because n is squared, while all the other values are constants. So, spacing between the levels
+gets larger as n increases. 
+
+psi_n(x) = Bsin(kx) = Bsin(n*pi*x/l) within the box. This is what we've determined. But to find functions that work, this
+one needs to normalize. So, we need to find what value B is. For a PIAB, normalization is the integral from 0 to l of
+|psi(x)|^2 dx, so here, integral from 0 to l of |B^2sin^2(n*pi*x/l)|dx. After doing the computation (email me with any
+questions about this, by the way) you end up with |B^2|/2 * l. Hence, B = sqrt(2/l). So, the final solution for PIAB is
+psi_n(x) = sqrt(2/l)*sin(n*pi*x/l).
+
+An interesting proprety of these wavefunctions is considering multiplying 2 different psi(x)s (so, psi_n(x) and psi_m(x))
+and integrating them over all space in the box (from 0 to l). Well, after using a trigonometric identity, we find out that
+the integral is 0. This means that psi_n and psi_m are orthagonal. Using the Kroenecker delta (which put simply, compares
+i and j, if i = j then Kroenecker(ij) = 1, if they aren't equal, Kroenecker(ij) = 0) we can state that psi_n and psi_m are
+also orthonormal. 
+
+Graphing the PIAB is fairly straightforward. psi_1(x) = sqrt(2/l)*sin(pi*x/l), so its effectively a large sinusoid stretching
+across the whole box. It has 2 nodes, one at x = 0 and the other at x = l. psi_2 is identical but with n=2 instead of 1, and
+has a 3rd node at l/2. So on and so forth. The probability density is also just the absolute value of psi(x), squared. On 
+probability density, its interesting to point out that the density for a classical particle in a box is just a rectangle. The
+particle has an equal chance of being anywhere in the space of the box. Recall that raising n is basically the same as raising
+the energy level, and raising n by 1 adds one node to the graph. So as n goes to infinity, psi_n(x) becomes a rectangle that
+is centered at y = 0, between 0 and l. Then, the absolute value is just another rectangle - and is in fact identical to the
+classical PIAB probability density. This an example of the correspondence principle - a quantum particle with a macroscopic
+energy starts behaving like a macroscopic particle.
+
+What if we had a free particle in one dimension: no box, and V(x) is 0 everywhere. Using the time independent Schrodinger eqn
+psi must then be sin(theta), cos(theta), or e^(i*theta). Using the time independent equation again and solving for psi(x),
+we get C_1(e^(i*sqrt(2mEx/h_bar))) + C_2(e^(-i*sqrt(2mEx/h_bar))). E > 0 everywhere, so oscillatory behavior (as per Lec3)
+is found everywhere. Also, E cannot be quantized - theres no "n" term. It can only be greater than 0. So, lone electron
+energy is not quantized.
+
+Particle in a Rectangular Well: the infinitely high potential energy of the box is not exactly realistic. There's always going
+to be a little bit of tunneling. Rectangular wells have complicated equations because the regions of finite and 0 energy have
+to have one continuous* function through them. Thus, psi(x) of region 1 = C*exp[(sqrt(2m/h_bar^2)*sqrt(V_0-E))x], similarly
+for region 3 G*exp[-(sqrt(2m/h_bar^2)*sqrt(V_0-E))x]. Region 2, within the actual box, is somewhat familiar, as it should be.
+Acos[(sqrt(2m/h_bar^2)*sqrt(E))x] + Bsin[(sqrt(2m/h_bar^2)*sqrt(E))x]. If the well is symmetrical (potential energy of region
+1 = region 3) then C = G. The computation of actual quantities is complicated by the 4 boundary conditions that must be applied
+for A, B, C, and G. *Function must also be differentiable.
+
+Quantum tunneling is an inherent part of the Particle in a Rectangular Well problem, hence why the formulas for psi(x) of the
+different regions are more complicated. But what happens when the total energy of the system exceeds the energy 'walls'
+that are imposed by the well? Well, this results in something called an unbound energy state, and allows the particle to be
+found very far from the box. If we let N be the number of bound states, where a bound state occur when V_0 > E and an unbound
+state occurs when E > V_0 (where V_0 is the "height" of the potential energy of the well), then we can state the following
+inequality: N >= b/pi > N-1, where b = sqrt(2mV_0)/h_bar, also expressed as b = 2pi*sqrt(2mV_0)/h.
+
+A common question is to present a real world example of quantum tunneling. There are two good cases: alpha decay and ammonia
+inversion. Alpha decay occurs via tunneling, because the helium nucleus that breaks off the the core atom can break off without
+having enough energy to counteract the nuclear forces holding the atom together. Ammonia inversion is an ammonia molecule
+inverting in three dimensions, much like an umbrella in the wind. The core nitrogen stays in place, while the lone pair switches
+sides with the hydrogen atoms. This process occurs spontaneously at most temperatures, despite the actual energy required for a
+inversion being higher than the energy within the system. [END OF LECTURE 4/PART 1 OF LECTURE 5, END OF CH2]
+
+Lets talk about Operators and the start of chapter 3. When we look at one of the time independent Schrodinger equations, such as
+-(h_bar^2/2m)(d^2psi/dx^2)+V(x)psi(x) = E*psi(x), we notice that psi(x) shows up on both sides. This basically means that the
+-(h_bar^2/2m)(d^2psi/dx^2)+V(x) part 'operates' on psi(x), and transforms it into the function E*psi(x). But before we get too
+deep into quantum operators, we first must cover the basic rules that govern them.
+
+Let D be the differentiation by x operator. Df(x) = f'(x). Let "3" be an operator that multiplies a function by 3. "3"f(x) = 3f(x).
+We'll come back to these soon. You can add operators, so (D+3)f(x) = Df(x) + 3f(x). Subtraction works the same, (D-3)f(x) = Df(x)
+- 3f(x). For example, (D+3)(x^3+5) = 3x^3+3x^2+15. Products of operators: (D*3)f(x) = D(3(f(x))). CRITICALLY, order matters here.
+If we have an operator x that multiplies a function by x, for example, (Dx)f(x) = xf'(x) + f(x). This is determined by the chain
+rule. However, (xD)f(x) = xf'(x). This means (xD) and (Dx) do not commute. (3D and D3 commute, though). We also have some special
+operators: 1 is the unit operator, so (1)f(x) = f(x), and 0 is the null operator (just turns f(x) into 0). We can perform algebra
+with operators too. Knowing Dx of f(x) is xf'(x) + f(x) and xD of f(x) is xf'(x), we can state that Dx - xD = 1, the unit op.
+The associative law is also a part of operator algebra, so operators A(BC) = (AB)C. The main difference between operator algebra
+and regular algebra is the lack of a commutative law. We have a term called a commutator, though. A commutator [A,B] is defined
+as AB - BA, where if the result is 0 the 2 operators commute, if its not 0, they don't. Operator exponents work as expected, so
+A^2 = AA, A^n = AAAA.....A n times. 
+
+We're going to be dealing with linear operators for the most part. "A" is a linear operator if and only if A[f(x)+g(x)] = Af(x) +
+Ag(x), and A[cf(x)] (where c is a constant) = cAf(x). So operator x, x^2, D, D^2 are all linear operators. However, something like
+sqrt, ()^2, sin, and cos are not. The linearity of the function is not preserved. Linear operators are related closely to
+eigenvalues and eigenfunctions. Eigen is German for characteristic, so an eigenfunction is the core function that results from a
+linear operator, while an eigenvalue is the value that affects that function. For example, applying D(e^(2x)) results in 2e^(2x),
+so e^(2x) is the eigenfunction and 2 is the eigenvalue. For all eigenfunctions and eigenvalues of D, a separation of variables can
+be done. D is just d/dx, so let df/dx (where f is just a function) = cf. Via separation of variables, the result is df/f = kdx.
+Integrating both sides and rearranging for f(x), we get f(x) = Ce^(kx). k can be a complex number (this will be useful in later
+chapters). 
+
+So back to our original Operator, -(h_bar^2/2m)(d^2psi/dx^2)+V(x). This is called the Hamiltonian operator (H). So, H*psi(x) =
+E*psi(x). Ergo, E is the eigenvalue. To understand what exactly the Hamiltonian is, we have to go back to classical mechanics. The
+Hamiltonian there represents the total energy of a system - kinetic + potential energy. It is described in terms of coordinates q,
+commonly x, y, z for our 3-dimensional problems. We take the conjugate momentum P_q, and can then calculate the total kinetic
+energy of a system using P^2/2m. For 3 dimensions, its just (P_x^2+P_y^2+P_z^2)/2m. The Hamiltonian for 1 particle in 1D in classical
+mechanics is similar to the one in quantum. Classical: H = P_x^2/2m + V(x); Quantum: H = -(h_bar^2/2m)(d^2psi/dx^2)+V(x). It can be
+proven that the quantum one can be derived from the classical one.
+
+With what we've learned here, we can generalize. Let B be a quantum mechanical operator associated with a physical property B. Bf_i
+= b_i*f_i, where i is a natural number, and f_i is an eigenfunction of B with eigenvalue b_i. Quantum Mechanics postulates that a
+measurement of property B must yield one of the eigenvalues b_i of operator B. So if we let the B operator = Hamiltonian operator,
+then the Hamiltonian of psi_i = E_i*psi_i.[END OF LECTURE 5]
+</span></details>
+<li><details><summary>  Lecture 6,7: More Operators; Expanding into the Third Dimension</summary><span>
+Quickly touching upon operator B's purpose - it simply interlinks physical properties such as momentum to quantum mechanics. It's
+there so that we can derive more properties of quantum particles and systems. Now, another postulate: if the state function of the
+system Psi (capital P, this is in terms of x and t) is the eigenfunction of B operator with eigenvalue b_k, then the measurement
+property of B must yield b_k. If we suppose Psi(x,t) = e^-(iEt/h_bar)*psi(x) where psi(x) is the solution to the time-independent
+Schrodinger equation, then is Psi(x,t) an eigenfunction of the Hamiltonian operator? Well, the Hamiltonian of Psi(x,t) is equal to
+the Hamiltonian of e^-(iEt/h_bar)*psi(x). And the Hamiltonian has no derivative with respect to time, so from its "perspective" the
+e^-(iEt/h_bar) term "looks" like a constant. Thus it can be extracted out of the operator, so e^-(iEt/h_bar)*H(psi(x)) = e^-(iEt/h_bar)
+*E*psi(x). We can factor out E and our result checks out - the state function Psi is an eigenfunction of the Hamiltonian.
+
+We can consider another property - momentum p_x, which can also be expressed as (d/dx)*(h_bar/i). What are its eigenfunctions and
+eigenvalues? Well, lets say p_x*g(x) = k*g(x) [k is a constant] so (d/dx)*(h_bar/i)*g(x) = k*g(x). Rearranging, dg/dx = ikg(x)/h_bar
+so a general way to express g(x) is as Ae^(ikx/h_bar) [a is also a constant]. Using Euler's law, this can be split into g(x) =
+A[cos(kx/h_bar)+i*sin(kx/h_bar)]. We can conclude from this that k must be a real number, or else g(x) can go to infinity, which is
+not possible. Now lets consider the momentum of the PIAB. Psi(x,t) = e^-(iEt/h_bar)*sqrt(2/l)*sin(n*pi*x/l). E = n^2h^2/8ml^2. Now we
+can use the momentum operator p_x on Psi. This yields (h_bar/i)*e^-(iEt/h_bar)*(n*pi/l)*sqrt(2/l)*cos(n*pi*x/l). Critically, this is
+NOT an eigenfunction of p_x operator because the result is different from our expected k*Psi function. Therefore, we cannot predict
+the eigenvalues when p_x is measured. However, (p_x)^2 is an eigenfunction of Psi. The end result is (h_bar)^2*e^-(iEt/h_bar)*sqrt(2/l)
+*(n*pi/l)^2*sin(n*pi*x/l). The eigenvalue here is (h_bar)^2*(n*pi/l)^2 = (nh/2l)^2. This is consistent with what we already know about
+the PIAB: kinetic energy is the momentum squared divided by 2m, and potential energy is 0. So kinetic energy (or total energy E) is just
+(n^2*h^2/8ml^2). What's notable here is that in classical mechanics, p_x = +/- sqrt((p_x)^2). This is not true in quantum mechanics.
+[END OF LECTURE 6]
+
+Let's examine 1 particle, 3D Schrodinger equation. Once again H*psi=E*psi. But this time, the Hamiltonian is the sum of the energies in 
+the x, y, and z directions. Expressed as momentum equations, it's ((p_x)^2+(p_y)^2+(p_z)^2)/2m + V(x,y,z), where V is potential energy.
+So, after rewriting p_x,y,z, we end up with (-h_bar^2/2m)*(PD^2/PDx^2 + PD^2/PDy^2 + PD^2/PDz^2) + V(x,y,z). This partial derivative is 
+called a Laplacian Operator, and is expressed by a point-down triangle symbol called del. For the purposes of these lessons, it will be 
+written out as del or del^2, the latter is what is written as PD^2/PDx^2 +... So, the Hamiltonian is (-h_bar^2/2m)*del^2+V(x,y,z).
+For 2 particles in 3D, you have 2 sets of coordinates for each one, so x1,y1,z1 and x2,y2,z2. The particles can also have different
+masses. So the formula for them is (-h_bar^2/2m1)*del1^2+V(x1,y1,z1) + (-h_bar^2/2m2)*del2^2+V(x2,y2,z2). Generalizing, for n particles
+in 3D, you have -1*[sum from i = 1 to n of (h_bar^2/2mi)*deli^2+V(x1,y1,z1,x2,y2,z2,...xn,yn,zn)] = Hamiltonian.
+
+
+</span></details>
+<li><details><summary>  Lecture 12: Various Hydrogen Atom Tidbits</summary><span>
+The 1s orbital of a hydrogen atom is larger than the 1s orbital of a Helium +1 ion atom. This is due to the nuclear attractive force
+of the helium being twice as big. Zeeman effect - discovered experimentally in 1896. If applying external magnetic field to hydrogen
+gas spectra, some spectral lines split and shifted. Quantum mechanics explains this. A charged particle moving through space at a
+constant velocity produces a magnetic field (this is how electromagnets work). Magnetic field vector B at a point P and charge Q moving
+at velocity vector v. B = (mu_0)*Q/(4pi) * (v x r)/(r^3). r is vector from charge Q to point P. mu_0 is magnetic permeability with
+value 4pi * 10^-7 N*C^-2*s^2. So an electric current travelling through a loop of wire will cause a magnetic moment to be generated
+perpendicular to the loop. Magnetic moment vector |M| = current * loop area (I*A). If loop is circular with radius r, circumference is
+2pi*r, area is pi*r^2. If charged particles that make up the current travel at velocity v, time to get around the loop will be distance
+travelled/velocity, which is just 2pi*r/v. Current I is charge per unit time, which ends up being Q*v/(2pi*r). Velocity of a particle
+is related to linear momentum, so p = mv, thus v = p/m. |M| = Qvr/2 = Qrp/2m. Since that is the magnitude of the magnetic moment, the
+vector is just Q*(r x p)/2m = (Q/2m)L, where L is the angular momentum vector. 
+
+Now lets apply this information to the hydrogen atom. For a hydrogen atom, Q = -e, m = m_e, so magnetic moment M = (e/2m_e)*|L|. This
+is intrinsic if the electron in the atom is travelling in a circular orbit. We know L^2 = l(l+1)h_bar^2. So absolute value of L is
+sqrt(l(l+1)h_bar^2) = ((e*h_bar)/2m_e)[l(l+1)]^(1/2). (e*h_bar/2m_e) = mu_b, called Bohr magneton. Value of 9.274*10^-24 J/T. In the
+1s state, there is no magnetic moment associated with it, as l = 0. Now lets apply an external magnetic field. There will be
+interaction energy between the magnetic dipole and external field, which is given by E_B = -M ⋅ B = (e/2m_e)L ⋅ B. Assume B is pointed
+in the z-direction, so B vector = B*k vector. E_B = (e/2m_e)(L_x*i+L_y*j+L_z*k) ⋅ B*k vector. This simplifies to (e/2m_e)B*L_z =
+(mu_b/h_bar)*B*L_z. Now lets find the quantum mechanical operator for this interaction. Hamiltonian_B = (mu_b/h_bar)*B*(Operator L_z) 
+so Schrodinger equation becomes (H + H_B)psi = E*psi. Since Hamiltonian_B = (mu_b/h_bar)*B*(Operator L_z) has an operator we already
+know works, our old wave functions are still eigenfunctions of this new Schrd equation. Using psi = R_nl(r)y(l,m)(theta, phi),
+(H + H_B)R_nl(r)y(l,m)(theta, phi) = H*R_nl*y(l,m) + H_B*R_nl*y(l,m) = E_n*R_nl*y(l,m)+(mu_b/h_bar)B*(Op L_z)(R_nl*y(l,m)(theta, phi)). 
+This is just E_n*R_nl*y(l,m)+(mu_b/h_bar)B*(R_nl*(Op L_z)y(l,m)(theta, phi)) = E_n*R_nl*y(l,m) + m*h_bar*R_nl*y(l,m), which simplifies
+to (E_n + mu_b*B*m)R_nl*y(l,m). This removes the n-degeneracy of the hydrogen atom wavefunctions. For example, for n = 2, we have
+2s, 2p0, 2p1, 2p-1. Corresponding m values: 0,0,1,-1. So 2s, 2p stay at E_2. But as B gets larger, 2p1 rises energetically while 2p-1
+falls (2p splits into 2p0, 2p1, 2p-1). Starting at the 1s state and moving to the 2s, 2p state is a simple transition. With a magnetic 
+field, there are 3 transitions: s to 2p-1, to 2p0, and to 2p1. 
+
+(-=|^|^|=--=|^|^|=--=|^|^|=--=|^|^|=--=|^|^|=--=|^|^|=--=|^|^|=--=|^|^|=--=|^|^|=--=|^|^|=--=|^|^|=--=|^|^|=--=|^|^|=--=|^|^|=--=|^|^|=-)
+
+Theorems of Quantum Mechanics: Particle in a box, harmonic oscillator, rigid rotor, hydrogen atom. Atoms with 2+ electrons cannot be
+solved exactly. Thus we must develop approximate methods for solving other problems: variation method, pertubation theory. Notation
+changes. Integrals are tedious to write --> bracket notation. Integral of conj f_m*(Operator A)*f_n d(tau) is defined 〈f_m|Op(A)|f_n〉
+or just 〈m|Op(A)|n〉. For integral (conj f_m*f_n)d(tau), corresponding notation is 〈f_m|f_n〉. For m = n, 〈m|m〉* = 〈m|m〉 thus 〈m|m〉 is real.
+All Quantum Mechanical operators are Hermitian operators. Recall average value of A = integral of conjugate of state function*Op(A) *
+state function d(tau). Since A represents a physical quantity, its average value must be real. Thus, complex conjugate of the average
+of A = average of A. Any linear operator that obeys this equation is called a Hermitian operator. In bracket notation, 〈f_i|A|f_j〉 = 
+〈f_j|A|f_i〉* --> 〈i|A|j〉 = 〈j|A|i〉*. In matrix notation, A_ij = (A_ji)*. Linear momentum operator, potential energy operator, Hamiltonian
+operator are all Hermitian. Theorems about Hermitian operators: eigenvalues of Hermitian operators are real numbers (proof - let g_i
+and a_i be eigenfunctions and eigenvalues of A respectively. Then Op(A)g_i = a_i*g_i. Integral(g* * Op(A) * g d(tau)) = Int(g(Ag)* d(tau))
+then simplifying and substituting g_i for g, and applying a_i --> Int(g_i* * a_i * g_i) = Int(g_i * (a_i*g_i)*). a_i and a_i* are
+constants, so we can just pull them from the integral. Thus, a_i = a_i*); eigenfunctions of Hermitian operators are mutually orthagonal,
+meaning Op(B)F = sF, Op(B)G = tG therefore 〈F|Op(B)|G〉= 〈G|Op(B)|F〉* thus t〈F|G〉 = s*〈G|F〉*. s is real though, so s* = s, so (t -s)〈F|G〉 = 0
+A set of functions can always be found that are orthogonal (eg. Psi(2p1), Psi(2p0), Psi(2p-1) or Psi(2px), Psi(2py), Psi(2pz)). 
+Normalization: Int((g_i)* * g_i)d(tau) = 1. Orthogonality: Int((g_i)* * g_j)d(tau) = 0. Thus, 〈i|j〉 can be orthonormal.
+
+</span></details>
+<li><details><summary>  Lecture 13: Expanding in terms of Eigenfunctions</summary><span>
+Fourier, Taylor series expansion. In general, an arbitrary function that satisfies the b.c of a physical problem can be expanded as a
+linear combination of the eigenfunctions of that quantum mechanical problem. Example: expansion of function using PIAB eigenfunctions.
+psi_n(x) = sqrt(2/l)*sin(n*pi*x/l). n is a natural number, for x between 0 and l. psi = 0 outside region. Any function f(x) that
+satisfies b.c can be described as f(x) = sum_n=1toInfty[a_n*psi_n] = sqrt(2/l)sum_n=1toInfty(a_n*sin(n*pi*x/l)). Now to calculate a_n
+multiply both sides by psi_m* and integrate. Int(0tol)[psi_m* * f(x)dx] = Int(0tol)[psi*[sum_n=1toInfty(a_n*psi_n)]dx] = sum_n(1toInfty)
+[a_n * Kroenecker(mn)] = a_m. Specific example: f(x) = x between 0, l/2; f(x) = l-x between l/2, l. a_n = Int(0tol)[psi_n* * f(x)dx] =
+sqrt(2/l)Int(0tol)[sin(n*pi*x/l)f(x)dx] = sqrt(2/l)Int(0tol/2)[sin(n*pi*x/l)xdx] + sqrt(2/l)Int(l/2 to l)[sin(n*pi*x/l)(l-x)dx] = ...
+= [(2l)^(3/2)/(n^2*pi^2)]*sum(2n+1 to Infty)sin(n*pi/2). A set of functions is called complete if it can be used to expand an arbitrary 
+function. The set of eigenfunctions of any Hermitian operator that represents a physical quantity forms a complete set. Eigenfunctions
+of the momentum operator p_x. g_k = e^(ikx/h_bar), f(x) = Int(-infty to infty)[a(k)e^(ikx/h_bar)]dk. Theorem: let g1, g2, g3... be a
+complete set of eigenfunctions of Op(A). Let F be particular eigenfunction of A with an eigenvalue k. If F is expanded as F =
+sum(a_i*g_i) then the only non-zero coefficients a_i are those for which g_i has the same eigenvalue k. F is bound state of H-atom and
+its energy eigenvalue is E_2. F = a_1*psi(2s) + a_2*psi(2p0) + a_2*psi(2p1) + a_2*psi(2p-1). Eigenfunctions and commuting operators.
+Theorem: if Op(A) and Op(B) share a common complete set of eigenfunctions, g_i then Op(A) and Op(B) commute. Parity operator Op(PI):
+Op(PI) f(x,y,z) = f(-x,-y,-z). Op(PI)^2 f(x,y,z) = f(x,y,z). Op(PI)^2 = unit operator Op(1). 
+</span></details>
+<li><details><summary>  Lecture 20: Chapter 10 Electron Spin and Pauli Principle</summary><span>
+H' operator is the perturbation. E(1)_n = int(psi_n* * H * psi_n)d(tau), H' = Ae^-(bx^2), psi_0 = Ae^-(ax^2/2). E_n ~=~ E(0)_n + E(1)_n.
+Sodium vapor lamp - bulb with sodium, high voltage across sodium to electronically excite sodium, making it emit light. Visible emission
+line - one notable one is called sodium D line (yellow), gives lamps yellowish hue. Wavelength mainly at 589 nm. Shine this light thru
+a prism to disperse into various wavelengths - separates into two very closely spaced lines with slightly different wavelengths. Fine
+structure of atomic spectra - light breaks up into doublets or triplets that are very closely spaced. 1925 - Uhlenbeck and Goudsmit
+proposed that electron has an intrinsic angular momentum in addition to orbital angular momentum. Imperfect analogy to Earth orbiting
+sun, Earth spinning on its axis. Electron does not spin like Earth does because of vast disparity in size - called a non-classical
+effect because no good classical analogy. Analogous to orbital angular momentum of an electron (operators L^2, L_x, L_y, L_z), we can
+postulate existance of spin angular momentum operators (operators S^2, S_x, S_y, S_z). S^2 = (S_x)^2+(S_y)^2+(S_z)^2. [S_x, S_y] =
+i*h_bar*S_z, etc. S^2 has eigenvalues s(s+1)(h_bar)^2. s = 0, 1/2, 1, 3/2, etc... S_z eigenvalues = m_s(h_bar), m_s = -s, -s+1,...+s.
+s for an electron is restricted to 1/2, so m_s can only be -1/2 or 1/2. S^2 = (3/4)(h_bar)^2, S_z = -(h_bar)/2 or (h_bar)/2. |S| =
+sqrt(S^2) = sqrt(3)/2 * h_bar. Let a be spin eigenfunction of S^2 and S_z, with eigenvalue m_s = 1/2. Let b be spin eigenfunction of 
+S^2 and S_z, with eigenvalue m_s = -1/2. S^2(a) = a(3/4)(h_bar)^2, S_z(a) = a(h_bar)/2, S^2(b) = b(3/4)(h_bar)^2, S_z(b) = -a(h_bar)/2.
+Wavefcn psi is a function of spatial coordinates x,y,z. psi(x,y,z). a and b are functions, but of what coordinates? Coordinates m_s.
+psi(x,y,z) spatial normalization --> 1. a and b are orthogonal, spin normalization done via summation. a(1/2) = 1, a(-1/2) = 0, b(1/2)
+= 0, b(-1/2) = 1. a and b can be thought of as 2-component vectors a = (1, 0) and b = (0, 1). Now how is this related to the hydrogen
+atom? To a good approximation H for H-atom is independent of spin variables, therefore can use separation of variables. Psi = Psi(x,y,z)
+* g(m_s). H[psi(x,y,z)g(m_s)] = g(m_s)Hpsi(x,y,z) = g(m_s)Epsi(x,y,z) = Epsi(x,y,z)g(m_s). Energies are the same as before we included
+spin. Without spin, H-atom degeneracy was n^2, now with spin, degeneracy = 2n^2. Psi(1s)a or Psi(1s)b. Pauli principle - cannot put two
+electrons with the same spin - one must be spin up, other must be spin down. In classical mechaincs, all particles are distinguishable,
+since you can always follow the trajectory of each particle (e.g billiard balls). In QM we cannot follow individual electron trajectory
+due to uncertainty principle. Thus they are indistinguishable. If we exchange two electrons in a system. the probability distribution
+should remain unchanged. Define exchange or permutation operator P_12: intnerchange all the coordinates of particle 1 and 2. P_12 W+ is
+symmetric, P_12 W- is antisymmetric. He atom, electron 1 in 1s orbital with spin up, electron 2 in 3s orbital with spin down. Psi =
+1s(1)a(1)3s(2)b(2) = psi_1s(x,y,z)a(1)psi_3s(x2,y2,z2)b(2) --> P_12 psi = 1s(2)a(2)3s(1)b(1). Pauli principle: for a system of electrons
+the wavefunction psi must be antisymmetric with respect to any permutation operator. More generally, fermions have a half integer spin,
+and any system of fermions must be antisymmetric. Bosons have integer spin and must have symmetric wavefunctions. There is zero
+probability of finding 2 electrons at the same point in 3D space (due to Pauli replusion). This is an additional repulsion on top of
+Coulomb repulsion. 2 electrons inn 1D PIB of length l, psi(x1, x2). x1 is at x = 2, x2 is at x = 7. Then interchange location. Psi(2,7)
+= -Psi(7,2) due to antisymmetry. If the 2 particles are H-atoms, e+p, p has spin 1/2, e has spin 1/2 so H-atom spin is either 1 or 0.
+H-atom is therefore a boson. Deuterium - neutron has a spin of 1/2 so possible spins: 3/2 or 1/2 therefore deuterium is fermion, so
+1D PIB wavefcn will change sign if interchanged deuterium atoms. He atom spin possibilities: a(1)a(2), a(1)b(2), b(1)a(2), b(1)b(2).
+a(1)a(2) annd b(1)b(2) are ok, other 2 violate indistinguishability. So applying P_12 here, 1 and 4 are symmetric, 2 and 3 are neither
+symmetric nor antisymmetric. (1/sqrt(2))[a(1)b(2) +- b(1)a(2)], + sign gives symmetric, - gives antisymmetric. So 3 symmetric, 1 anti-
+symmetric. Pauli principle states that the total wavefunction must be antisymmetric with respect to exchange. Ground state of helium:
+space part is to put each electron in a 1s orbital. 1s(1)1s(2) symmetric, so multiply by (1/sqrt(2))[a(1)b(2) - b(1)a(2)]. Therefore
+the spin part must be antisymmetric. 
+</span></details>
+</ul>
+</span></details>
+</details>
+<details><summary>  Guest Lecture: CBE1002</summary><span>
+Sustainable Electrochemical Manufacturing - Prof. Modestino. Avoidance - Mitigation - Remediation - Adaptation. Electricity,
+manufacturing make up around 60% of emissions. Tech must be created to decarbonize industries. Transportation solutions: batteries
+(short term energy storage). Chemical fuels like hydrogen can be used to provide seasonal storage of electricity. Hydrogen is energy
+dense by weight but not by volume. 5 kg H2O roughly equivalent to 125,000 kg of dammed water. Combine photovoltaics with electrolyzer
+to create solar hydrogen device (14% efficiency). How to transform thermochemical processes into electrochemical processes. Goal of
+lab is to make electrochemical processes for simple organic compounds (butadiene, ethylene, toluene, benzene, propylene, etc). Focus
+on adiponitrile, precursor to nylon. Eletrohydrodimerization of AN to ABN. High selectivity is key to achieve most of useful product.
+Mass transport limitation - can be mitigated by pulsed electrolysis. Data-driven optimization: build regressional model and neural
+network to further optimize rate of ADN. 
+</span></details>
+</h3>
+</pre>
+</body>
+</html>
