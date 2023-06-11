@@ -1,55 +1,149 @@
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:100,200,300,400,500,600,700&display=swap');
-*
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'IBM Plex Mono', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'IBM Plex Mono', sans-serif;
 }
-body
-{
-    min-height: 100vh;
-    background:linear-gradient(#000, #272727)
+
+body {
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-header
-{
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  color: #fff;
+  font-weight: 200;
+  text-decoration: none;
+  font-size: 3em;
+  letter-spacing: 0px;
+  padding: 6px 10px;
+}
+
+header .logo:hover {
+  background: #13af13;
+  color: #000;
+}
+
+header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li {
+  list-style: none;
+  margin-left: 20px;
+}
+
+header ul li a {
+  text-decoration: none;
+  padding: 6px 10px;
+  color: #fff;
+  font-size: 1.2em;
+}
+
+header ul li a:hover {
+  background: #13af13;
+  color: #000;
+  border-radius: 10px 5px;
+}
+
+.box {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 15px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-header .logo
-{
-    color: #fff;
-    font-weight: 400;
+    top: 100px; /* Adjust the top position as needed */
+    left: 50px;
+    width: 10%;
+    background-color: #000;
+    border: 2px solid #fff;
+    padding: 20px;
+  }
+  
+  .box .title {
+    font-size: 1.5em;
+    font-weight: 300;
     text-decoration: none;
-    font-size: 3em;
-    letter-spacing: 0px;
-}
-header ul
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-header ul li
-{
-    list-style: none;
-    margin-left: 20px;
-}
-header ul li a
-{
-    text-decoration: none;
-    padding: 6px 10px;
     color: #fff;
-    font-size: 1em;
+    margin-bottom: 10px;
+  }
+
+.typewriter {
+  list-style: none;
+  padding: 0;
 }
-header ul li a:hover
-{
-    background: #fff;
-    color: #000;
+
+.typewriter .multitext {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.typewriter .multitext::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  transform-origin: right;
+  animation: typewriter-animation 22s steps(20) infinite;
+}
+
+.typewriter .multitext:nth-child(1)::after {
+  animation-delay: 0s;
+}
+
+.typewriter .multitext:nth-child(2)::after {
+  animation-delay: 3.7s;
+}
+
+.typewriter .multitext:nth-child(3)::after {
+  animation-delay: 7.4s;
+}
+
+.typewriter .multitext:nth-child(4)::after {
+  animation-delay: 11.1s;
+}
+
+.typewriter .multitext:nth-child(5)::after {
+  animation-delay: 14.8s;
+}
+
+.typewriter .multitext:nth-child(6)::after {
+  animation-delay: 18.5s;
+}
+
+@keyframes typewriter-animation {
+  0% {
+    width: 100%; /* Start with full width */
+  }
+  5% {
+    width: 0; /* Cover the text */
+  }
+  10% {
+    width: 0; /* Keep the text covered */
+  }
+  15% {
+    width: 100%; /* Uncover the text */
+  }
+  100% {
+    width: 100%; /* Keep the text uncovered */
+  }
 }
