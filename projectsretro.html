@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Projects!</title>
+<link rel="icon" type="image/x-icon" href="monocle.png">
+<link rel="stylesheet" href="nonHTML/style.css"/> 
+
+</head>
+<body>
+
+<pre>
+<h3 class="head"><a href=index.html class="homeLink">Daniel Naumov's Personal Site</a> [<a href="projectsretro.html">Projects</a>] [<div class="dropdown"><button class="dropbutton"><u>Musings</u></button><div class="dropdown-content"><a href="musings.html">Musings</a><a href="whatilearned.html">What I Learned</a><a href="resources.html">Resources</a><a href="laymanslist.html">Layman's List</a></div></div>] [<a href="aboutme.html">About Me</a>] [<a href="contact.html">Contact Me</a>] [<button class="toggle" onclick="toggle()">Click for Light Mode</button>]
+</h3>  
+<h3>
+    ________  ________  ________        ___  _______   ________ _________  ________      
+   |\   __  \|\   __  \|\   __  \      |\  \|\  ___ \ |\   ____\\___   ___\\   ____\     
+   \ \  \|\  \ \  \|\  \ \  \|\  \     \ \  \ \   __/|\ \  \___\|___ \  \_\ \  \___|_    
+    \ \   ____\ \   _  _\ \  \\\  \  __ \ \  \ \  \_|/_\ \  \       \ \  \ \ \_____  \   
+     \ \  \___|\ \  \\  \\ \  \\\  \|\  \\_\  \ \  \_|\ \ \  \____   \ \  \ \|____|\  \  
+      \ \__\    \ \__\\ _\\ \_______\ \________\ \_______\ \_______\  \ \__\  ____\_\  \ 
+       \|__|     \|__|\|__|\|_______|\|________|\|_______|\|_______|   \|__| |\_________\
+                                                                             \|_________|
+                                                                                                                                                                                                  
+    <script>
+        const btn = document.querySelector(".toggle");
+        function toggle(){
+          if (document.documentElement.getAttribute('color-mode') == 'light'){
+            document.documentElement.setAttribute('color-mode', 'dark');
+            btn.innerHTML = "Click for Light Mode"
+          } else {
+            document.documentElement.setAttribute('color-mode', 'light');
+            btn.innerHTML = "Click for Dark Mode"
+          }
+        }
+    </script>
+    
+    Current Projects:<ul>
+        <li>This Website</li>
+        <li><a href="latex.html">Heat and Mass Transport Homework LaTeX Display</a></li>
+        <li><a href="nonHTML/ellipsoid.cpp" download>Ellipsoid Generator</a> [Currently Displays Volume and Coordinates of 1 Ellipse] [Expect Bugs!]</li>
+    </ul>
+    Upcoming Projects:<ul>
+        <li>Schrodinger Equation Solver (Hydrogen Atom) with Visualization</li>
+        <li>Future Updates for Above: Helium Atom, Various Other Quantum Experiments</li>
+        <li>Basic Continuous Flow Equation Solver (Maybe with Visuals)</li>
+        <li>C++ Ellipsoid Generator Update (2nd Ellipse, Visuals)</li>
+    </ul>
+    Completed Projects:<ul><li>Omnisock - a Water-Proof Sock + Chassis with Chemical Heating</li>       
+<img src="/images/CADOmniSock1.jpg" alt="Omnisock Chassis CAD Views">
+1. CAD Views of the Chassis [Fusion 360]
+
+<img src="images/Chassis_Electronics.jpg" alt="Chassis with Electronics in Place">
+2. Chassis with Electronics
+        <li>Coil-Nailgun - Energy-Based Hammer Replacement</li>
+    </ul>
+</h3>
+</pre>
+
+</body>
+</html>

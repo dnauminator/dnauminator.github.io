@@ -7,15 +7,6 @@
   font-family: 'IBM Plex Mono', sans-serif;
 }
 
-body {
-  min-height: 100vh;
-  background: #000;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 header {
   position: absolute;
   top: 0;
@@ -65,85 +56,29 @@ header ul li a:hover {
   border-radius: 10px 5px;
 }
 
-.box {
-    position: absolute;
-    top: 100px; /* Adjust the top position as needed */
-    left: 50px;
-    width: 10%;
-    background-color: #000;
-    border: 2px solid #fff;
-    padding: 20px;
+body {
+    min-height: 100vh;
+    background: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.content {
+      margin: 0 auto;
+      max-width: 80%;
+      padding: 20px;
+      text-align: left;
+}
+.content a {
+    color: #3266ff;
+    transition: color 0.3s ease;
   }
   
-  .box .title {
-    font-size: 1.5em;
-    font-weight: 300;
-    text-decoration: none;
-    color: #fff;
-    margin-bottom: 10px;
+  .content a:hover {
+    color: #8ebbff;
   }
-
-.typewriter {
-  list-style: none;
-  padding: 0;
-}
-
-.typewriter .multitext {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-}
-
-.typewriter .multitext::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #000;
-  transform-origin: right;
-  animation: typewriter-animation 22s steps(20) infinite;
-}
-
-.typewriter .multitext:nth-child(1)::after {
-  animation-delay: 0s;
-}
-
-.typewriter .multitext:nth-child(2)::after {
-  animation-delay: 3.7s;
-}
-
-.typewriter .multitext:nth-child(3)::after {
-  animation-delay: 7.4s;
-}
-
-.typewriter .multitext:nth-child(4)::after {
-  animation-delay: 11.1s;
-}
-
-.typewriter .multitext:nth-child(5)::after {
-  animation-delay: 14.8s;
-}
-
-.typewriter .multitext:nth-child(6)::after {
-  animation-delay: 18.5s;
-}
-
-@keyframes typewriter-animation {
-  0% {
-    width: 100%; /* Start with full width */
+  
+  .content a:active {
+    color: #3266ff;
   }
-  5% {
-    width: 0; /* Cover the text */
-  }
-  10% {
-    width: 0; /* Keep the text covered */
-  }
-  15% {
-    width: 100%; /* Uncover the text */
-  }
-  100% {
-    width: 100%; /* Keep the text uncovered */
-  }
-}
