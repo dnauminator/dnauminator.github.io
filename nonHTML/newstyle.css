@@ -66,21 +66,15 @@ header ul li a:hover {
 }
 
 /* Media Query for Mobile Devices */
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   body {
-    padding-top: 200px; /* Add padding to push the content below the header */
+    padding-top: 100px; /* Add padding to push the content below the header */
   }
 
   header {
     padding: 15px;
     position: fixed;
     z-index: 1000;
-  }
-
-  header ul {
-    flex-direction: column;
-    align-items: flex-start;
-    background: #222;
   }
 
   header ul li {
