@@ -68,18 +68,24 @@ header ul li a:hover {
 /* Media Query for Mobile Devices */
 @media (max-width: 768px) {
   header {
-    padding: 15px;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  header .logo {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+    padding: 15px; /* Add some padding for space on mobile */
+    position: fixed; /* Keep the header fixed at the top */
+    z-index: 1000; /* Ensure the header stays above other content */
   }
 
   header ul {
-    margin-top: 15px;
+    flex-direction: column; /* Stack menu items vertically on mobile */
+    align-items: flex-start; /* Align items to the left */
+    background: #222; /* Add background color for better visibility */
+  }
+
+  header ul li {
+    margin: 10px 0; /* Adjust margins for spacing */
+  }
+
+  header ul li.dropdown .dropdown-menu {
+    left: 0; /* Center the dropdown on mobile */
+    min-width: 100%; /* Make the dropdown full width */
   }
 }
 
