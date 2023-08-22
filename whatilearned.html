@@ -1,174 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>What I Learned</title>
-<link rel="stylesheet" href="nonHTML/style.css"/> 
-
+  <meta charset="utf-8">
+  <title>Home Page!</title>
+  <link rel="stylesheet" type="text/css" href="nonHTML/newstyle.css"/> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    
-<pre>
-<h3 class="head"><a href=index.html class="homeLink">Daniel Naumov's Personal Site</a> [<a href="projectsretro.html">Projects</a>] [<div class="dropdown"><button class="dropbutton"><u>Musings</u></button><div class="dropdown-content"><a href="musings.html">Musings</a><a href="whatilearned.html">What I Learned</a><a href="resources.html">Resources</a><a href="laymanslist.html">Layman's List</a></div></div>] [<a href="aboutme.html">About Me</a>] [<a href="contact.html">Contact Me</a>] [<button class="toggle" onclick="toggle()">Click for Light Mode</button>]
-</h3>  
-<h3>                                                              
-    db   d8b   db db   db  .d8b.  d888888b      d888888b      db      d88888b  .d8b.  d8888b. d8b   db d88888b d8888b. 
-    88   I8I   88 88   88 d8' `8b `~~88~~'        `88'        88      88'     d8' `8b 88  `8D 888o  88 88'     88  `8D 
-    88   I8I   88 88ooo88 88ooo88    88            88         88      88ooooo 88ooo88 88oobY' 88V8o 88 88ooooo 88   88 
-    Y8   I8I   88 88~~~88 88~~~88    88            88         88      88~~~~~ 88~~~88 88`8b   88 V8o88 88~~~~~ 88   88 
-    `8b d8'8b d8' 88   88 88   88    88           .88.        88booo. 88.     88   88 88 `88. 88  V888 88.     88  .8D 
-     `8b8' `8d8'  YP   YP YP   YP    YP         Y888888P      Y88888P Y88888P YP   YP 88   YD VP   V8P Y88888P Y8888D' 
-                                                                                                                   
-
-        
-    <script>
-        const btn = document.querySelector(".toggle");
-        function toggle(){
-          if (document.documentElement.getAttribute('color-mode') == 'light'){
-            document.documentElement.setAttribute('color-mode', 'dark');
-            btn.innerHTML = "Click for Light Mode"
-          } else {
-            document.documentElement.setAttribute('color-mode', 'light');
-            btn.innerHTML = "Click for Dark Mode"
-          }
-        }
-    </script>
-
-    This'll be more properly organized later. Temporarily inactive as school notes are
-    primarily uploaded to <a href="laymanslist.html">Layman's List</a> to be easily referenced by university friends
-    and people in the future. :-)
-    <details><summary>19 January 2022 WIL</summary><span>
-    Did a small break just to relax and clear my mind before school starts. Back at
-    it because Quantum Chemistry is hard. So, particle in a box. This is basically 
-    a microscopic box in one dimension. The particle is "contained" by means of potential
-    energy - 0 inside the box, infinite outside. What makes the box useful? Well, we
-    can use it to determine the energy of a particle via the formula E = ((n*h_bar)^2/
-    8m(l)^2). m is mass and l is the length of the box - this is why large boxes that
-    we can actually see result in such a low energy that it is negligible, and therefore
-    not a part of the scope of quantum mechanics. The box also allows us to calculate
-    frequency and wavelength by relating the upper and lower quantized energies in the
-    box to the standard definition of energy E = (planck_constant*frequency) and
-    (frequency*wavelength) = c. Basically, the box helps us compute the properties of a
-    tiny particle in a tiny space.
-    </span></details>
-    <details><summary>11-12 January 2022 WIL</summary><span>
-    11-12 January 2022: Physical Chemistry Problem Solving
-    The next few WIL are going to just be going through a set of 33 textbook 
-    problems step by step as a means of mastering content.
-
-    1.1: All photons have the same energy - false, since E depends on wavelength
-    As the frequency of light increases, wavelength decreases - true, c=lambda*v
-    If a light x with a wavelength 'a' does not induce the photoelectric effect in
-    a certain metal, then light y with wavelength 'b' (where a>b) will not induce 
-    the effect - true, because (as determined in part a) the energy of y is lower.
-
-    1.2: Photon Energy at 984 nm wavelength: E_Photon = planck_constant*frequency
-    E = ((2.998 * 10^8 m/s)/ (984*10^-9 m)) * 6.626 * 10^-34 = 2.019 * 10^-19 J
-    Amount of photons emitted with power 8*10^6 W and duration 4*10^-8 seconds:
-    1W = 1J/S. E_Photon = 2.019*10^-19J. Total J = power*duration = 0.32J.
-    0.32J/(2.019*10^-19J) = 1.585 * 10^18 photons emitted.
-
-    1.3: Energy of 1 mole of UV photons (wavelength 300 nm). 1 mole = 6.022 *
-    10^23. E_Photon = ((2.998*10^8 m/s)/(300*10^-9 nm)) * 6.626 * 10^-34 =
-    6.622 * 10^-19J. Energy of 1 mole = 6.622*10^-19J * 6.022*10^23 = 398,751J.
-
-    1.4: Work Function of pure Na is 2.75 eV, 1 eV = 1.602*10^-19J. Maximum kinetic
-    energy of photoelectrons emitted from Na exposed to 260 nm: E = (planck_constant
-    * c)/wavelength. Maximum kinetic energy is E - work function. E = (6.626*10^-34
-    * 2.998*10^8 m/s)/(260*10^-9 nm) = 7.640*10^-19J. Work Function = 1.602*10^-19J *
-    2.75 = 4.406*10^-19J. MaxKE = 7.640*10^-19J - 4.406*10^-19J = 3.234*10^-19J or
-    2.02 eV. Longest wavelength that will curve photoelectric effect in Na: this will
-    happen when E = 4.406*10^-19J. Working backwards, 4.406*10^-19J = (6.626*10^-34
-    * 2.998*10^8 m/s)/(x nm), x = (6.626*10^-34* 2.998*10^8 m/s)/(4.406*10^-19J) = 
-    451 nm.
-
-    1.5: Wien's law - I = av^3/e^(bv/T), a and b are constants.
-    Plack's equation - I = av^3/(e^(bv/T)-1). At high frequencies, Wien's law is a good
-    approximation, since as v grows e^(bv/T)-1 can be approximated to e^(bv/T), because
-    e^(bv/T) >> 1. Rayleigh-Jeans law - I = 2(pi)v^2(kb)T/(c^2). Taylor expansion of e^x is
-    sum (from k=0 to infinity) of (x^k)/(k!). Taylor expansion of e^(bv/T) is basically
-    an expansion of e^(cx) (c=b/T, since both are just numbers). This results in sum 
-    (from k=0 to infinity) of (cx)^k/(k!), and since x is small, this can be approximated
-    to 1 + cx, or 1 + bv/T. So Planck's equation can be approximated to I = av^3/(bv/T),
-    and through algebraic manipulation, this can be expressed as I = a(v^2)T/b. While not
-    identical to the original law, it is important to remember that a and b are numerical
-    values just like 2pi, kb, and c^2, so by applying the proper constants, the formulas
-    match.
-
-    1.6: Calculate de Broglie wavelength of an electron moving at speed c/137: wavelength
-    = planck_constant/(mass_electron*velocity_electron). This leads to the expression
-    6.626*10^-34/(9.109*10^-34*2188321.168) = 3.324*10^-10, which is 3.324 angstrom or
-    0.3324 nm. 
-
-    1.7: Integrate the function dx/dt = -gt + gt_0 + v_0 to find x as a function of time:
-    Multiply both sides by dt then integrate both sides. Integral(dx) = Integral((-gt+gt_0
-    +v_0)dt), integrals are definite (from x_0 to x), (from t_0 to t). This results in
-    x - x_0 = (-1/2)g(t-t_0)^2 + v_0(t-t_0).
-
-    1.8: psi = ae^(-ibt)e^(-bmx^2/h_bar). Find potential energy function V - this can be
-    done via time-dependent Schrodinger eq (t is present in equation). The relevant eq is
-    (-h_bar/i)(partial_psi(x,t)/partial_t) = (-(h_bar^2/2m))(2partial_psi(x,t)/2partial_x)
-    +V(x,t)psi(x,t). Goal is to find V(x,t). partial_psi/partial_t = -ibae^(-ibt)e^(-bmx^2/
-    h_bar). 2partial_psi/2partial_x = ae^(-ibt)(2bm/h_bar^2)(2bmx^2-h_bar)e^(-bmx^2/h_bar).
-    Simplifying, we end up with (h_bar)bae^(-ibt)e^(-bmx^2/h_bar) = 
-    ae^(-ibt)(-b)(2bmx^2-h_bar)e^(-bmx^2/h_bar) + V(x,t)ae^(-ibt)e^(-bmx^2/h_bar). So V(x,t)
-    = ((h_bar)bae^(-ibt)e^(-bmx^2/h_bar) - ae^(-ibt)(-b)(2bmx^2-h_bar)e^(-bmx^2/h_bar) / 
-    ae^(-ibt)e^(-bmx^2/h_bar)). V(x,t) = 2mb^2x^2
-    </span></details>
-    <details><summary>10 January 2022 WIL</summary><span>
-    10 January 2022: Physical Chemistry
-    In Physical Chemistry, I've started solving problems from the book as a means to
-    better understand what exactly I'm learning. The first (and simplest) questions
-    are on probability. However, before I delve into it, some backstory is required.
-    Probability is crucial in the field of quantum mechanics, a large reason being
-    the Heisenberg Uncertainty Principle, which basically dictates that we can never
-    know both the exact position and velocity of a tiny particle (like an atom). So
-    as a way to somewhat get around this, probability is used to see how likely some
-    outcome is in a quantum mechanics problem (such as the odds that the particle
-    lies in some region of space from a to b).
-
-    So, some things about the actual calculations. They solve one-particle, one-
-    dimensional systems (so they're pretty basic). They utilize something called a
-    wavefunction, but it must be modified first. We're dealing with probabilities,
-    so the "Born Interpretaion," created by Max Born, is used. Born says that the 
-    product of conjugate wave function and the normal wavefunction results in the 
-    probability density, which is another function. This can be simplified down to
-    the absolute value of the wavefunction squared results in probability density.
-    The conjugate is just used to show that the math holds for complex numbers. 
-
-    Now what can we do with this probability density? We can take its derivative to
-    determine the probability that a particle is between x and x+dx, where dx is a
-    tiny value. We can also state that the integral from -infinity to +infinity of
-    the probability density function is 1. This is called normalization, and basically
-    tells us that the particle must be somewhere on the x axis (1 is 100%).
-
-    With this information, we can now solve numerical problems. The book goes through
-    one example that I will transcribe. The wavefunction (also known as psi) is equal
-    to a^(-1/2)*e^(-|x|/a) at t = 0. a = 1.0000 nm (DO NOT express this as 1*10^-9 m).
-    Objective 1 is to find the probability that the measured value (the particle) lies
-    between 1.5000 and 1.5001 nm. Objective 2 is to find the probability between 0 nm
-    and 2 nm. Objective 3 is to verify that the probability function will obey
-    normalization.
-
-    Objective 1 utilizes a unique solution. Since the interval is tiny (0.0001 nm) a
-    derivative is not needed. You can just use 0.0001 nm as the dx. The computation is
-    pretty straightforward - square the wavefunction (and use the absolute value), then 
-    plug in the numbers. "e" is Euler's number.
-
-    Objective 2 uses integration. Use the squared wavefunction from (1) and integrate
-    from 0 to 2. Remember that "a" is a constant, which means you can extract it. Then
-    evaluate.
-
-    Objective 3 is akin to Objective 2 regarding how you solve the problem, but there's
-    one catch. Since you're using absolute values, split the integral into two - one
-    from -infinity to 0, the other from 0 to +infinity. Then evaluate.
-    
-    As a bonus exercise, attempt Objective 1 but with the following wavefunction:
-    (32a^3/pi)^(1/4)*xe^(-ax^2). For the purpose of proper units, a is 1.0000 nm^-2. Also
-    use x between 1.2000 and 1.2001 nm. Happy solving!
-    </span>
-</details>
-</h3>
-</pre>
+  <header>
+    <a href="newindex.html" class="logo">dnauminator</a>
+    <ul>
+      <li><a href="projects.html">Projects</a></li>
+      <li class="dropdown">
+        <a>Blog List</a>
+        <ul class="dropdown-menu">
+          <li><a href="musings.html">Musings</a></li>
+          <li><a href="whatilearned.html">What I Learned</a></li>
+          <li><a href="writings.html">Writings</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </header>
+  <div class="content">
+    Welcome to my 'What I Learned' page! 
+  </div>
 </body>
 </html>

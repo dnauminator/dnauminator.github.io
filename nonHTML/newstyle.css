@@ -8,52 +8,120 @@
 }
 
 header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 15px 40px;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #000;
 }
 
 header .logo {
   color: #fff;
   font-weight: 200;
   text-decoration: none;
+  border-radius: 10px;
+  padding: 6px 20px;
   font-size: 3em;
   letter-spacing: 0px;
-  padding: 6px 10px;
 }
 
 header .logo:hover {
   background: #13af13;
   color: #000;
+  border-radius: 10px;
+  padding: 6px 20px;
 }
 
 header ul {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-top: 10px;
 }
 
 header ul li {
   list-style: none;
-  margin-left: 20px;
+  margin: 5px 10px;
 }
 
 header ul li a {
   text-decoration: none;
-  padding: 6px 10px;
+  padding: 6px 20px;
+  border-radius: 10px;
+  font-weight: 200;
   color: #fff;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 header ul li a:hover {
   background: #13af13;
   color: #000;
-  border-radius: 10px 5px;
+  border-radius: 10px;
+  padding: 6px 20px;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  header {
+    padding: 15px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header .logo {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  header ul {
+    margin-top: 15px;
+  }
+}
+
+header ul li.dropdown {
+  position: relative;
+}
+
+header ul li.dropdown:hover .dropdown-menu {
+  display: block;
+  transform: translate(0px, -5px); /* Adjust the horizontal position */
+}
+
+header ul li.dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  min-width: 200px; /* Increase the width */
+  z-index: 1;
+  border: 1px solid #13af13;
+  border-radius: 20px;
+  top: 100%; /* Position below the link */
+  left: -10px; /* Adjust the left position */
+}
+
+header ul li.dropdown .dropdown-menu li {
+  padding: 3px; /* Increase padding for larger box */
+  list-style: none;
+  text-align: left;
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide any overflow text */
+  text-overflow: ellipsis; /* Add ellipsis for long text */
+}
+
+header ul li.dropdown .dropdown-menu li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header ul li.dropdown .dropdown-menu li a:hover {
+  background: #13af13;
+  color: #000;
+  border-radius: 10px;
 }
 
 body {
