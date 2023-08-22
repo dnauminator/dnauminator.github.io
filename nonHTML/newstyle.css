@@ -7,6 +7,7 @@
   font-family: 'IBM Plex Mono', sans-serif;
 }
 
+
 header {
   position: fixed;
   top: 0;
@@ -23,7 +24,7 @@ header .logo {
   color: #fff;
   font-weight: 200;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: 20px 40px;
   padding: 6px 20px;
   font-size: 3em;
   letter-spacing: 0px;
@@ -32,7 +33,7 @@ header .logo {
 header .logo:hover {
   background: #13af13;
   color: #000;
-  border-radius: 10px;
+  border-radius: 20px 40px;
   padding: 6px 20px;
 }
 
@@ -52,7 +53,7 @@ header ul li {
 header ul li a {
   text-decoration: none;
   padding: 6px 20px;
-  border-radius: 10px;
+  border-radius: 10px 20px;
   font-weight: 200;
   color: #fff;
   font-size: 1em;
@@ -61,7 +62,7 @@ header ul li a {
 header ul li a:hover {
   background: #13af13;
   color: #000;
-  border-radius: 10px;
+  border-radius: 10px 20px;
   padding: 6px 20px;
 }
 
@@ -103,15 +104,15 @@ header ul li.dropdown .dropdown-menu {
   min-width: 200px; /* Increase the width */
   z-index: 1;
   border: 1px solid #13af13;
-  border-radius: 20px;
+  border-radius: 30px 0px 10px 40px;
   top: 100%; /* Position below the link */
-  left: -10px; /* Adjust the left position */
+  left: -85px; /* Adjust the left position */
 }
 
 header ul li.dropdown .dropdown-menu li {
   padding: 3px; /* Increase padding for larger box */
   list-style: none;
-  text-align: left;
+  text-align: center;
   white-space: nowrap; /* Prevent text from wrapping */
   overflow: hidden; /* Hide any overflow text */
   text-overflow: ellipsis; /* Add ellipsis for long text */
@@ -125,10 +126,11 @@ header ul li.dropdown .dropdown-menu li a {
 header ul li.dropdown .dropdown-menu li a:hover {
   background: #13af13;
   color: #000;
-  border-radius: 10px;
+  border-radius: 10px 20px;
 }
 
 body {
+    padding-top: 100px;
     min-height: 100vh;
     background: #000;
     color: #fff;
