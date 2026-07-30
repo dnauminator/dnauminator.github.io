@@ -24,6 +24,42 @@
   </header>
   <div class="content">
     Welcome to my musings page! <br><br>
+    <details><summary>New Directions (07/29/2026)</summary><span>
+        Nearly 3 years went by. Anyway, let's pick up where we left off. I need to make this site have better mobile compatibility and a truly
+        mind boggling amount of class notes to catch up on. <br><br>
+
+        Long story short: I graduated, and then graduated again (B.S. Chemical and Biomolecular Engineering, M.S. Chemical Engineering at NYU),
+        got a job at Leidos doing some government adjacent work (mostly chasing subcontractors around), and now I'm quitting. My last day is
+        August 20th, 2026. What's next? <br><br>
+
+        Over my year of working, I've gotten deeply interested in automation in the service of scientific discovery. I've generally been AI
+        averse in the past, as I didn't want to use it as a mental crutch. But in my opinion it seems more and more likely to be the future of
+        science. We have vast databases of scientific articles where doing a traditional literature review would be nearly impossible, while
+        AI can (with some hallucinations, of course) synthesize immense quantities of information, helping us find research gaps/opportunities
+        for experimental revalidation. And complex AI/ML algorithms have slashed the computational cost of creating high-fidelity quantum
+        chemical models. <br><br>
+      
+        But what I've mentioned so far isn't really automation, and that's where I think the gap is. In doing actual chemistry, we needed people
+        to actually run the experiments. To be fair, a vast amount of modern science has been about creating the tools that allow for greater
+        degrees of experimental automation (autopipettes, PCR thermocyclers, robotic arms, etc.). Now, with the advent of better AI tools and
+        advanced robotics, we can start to think about actually trying to close the loop here, especially in the realm of experiments that are
+        "high-throughput". What do I mean by close the loop? Picture this: you are studying various different metal organic frameworks (MOFs)
+        with a particular focus, let's say carbon dioxide capture. We've synthesized and published plenty of articles about loads of different
+        MOFs, and we also have quantum chemical modeling that lets us create hypothetical MOFs that would then need to be synthesized. My task:
+        create (or find) a MOF that separates CO2 from a particular flue gas with a particular efficiency at a certain temperature. I can make
+        a value function based off my desired MOF performance. Now, AI steps in. It reviews all the existing literature, cataloguing all the
+        various MOFs. It runs pseudo quantum-chemical simulations of them, along with other hypothetical MOF structures. By pseudo I mean the
+        AI isn't actually running a computationally intensive calculation with Hamiltonians - many calculations have already been done and its
+        making an educated guess based off of them. It finds candidates that are in theory well suited. AI plans out synthesis routes for the
+        ones that do not exist yet, and (this part is still human) a lab worker actually procures the materials and performs the synthesis of
+        the MOFs. The MOFs are then analyzed for their separation efficiency for some flue gas at some temperature, and AI runs the data
+        analysis, leverages our value function, and determines the best MOF for the job. <br><br>
+
+        I want to build these automated systems that can run experiments quickly and give the AI plenty of data to analyze as (in my opinion)
+        this will accelerate scientific progress. If I create a system that can vary flue gas composition and temperature, I can use Gaussian
+        Process Regression to create an effectiveness "heat map" for each MOF - more data that'll help improve prediction fidelity and maybe
+        give some insight into the fundamental chemical mechanisms guiding the performance.
+        </span></details>
     <details><summary>A Revamped Website (08/22/2023)</summary><span>
         Today is August 22nd, 2023. I've been slowly working on this new, revamped website for around a month, and it's finally good enough to 
         start being something that I can show off. I've gone for a more minimalistic design, and focused more on quality of life features, such 
